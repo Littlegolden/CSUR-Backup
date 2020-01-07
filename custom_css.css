@@ -167,14 +167,14 @@ body.dark a.PostMention{
         display: none !important; }
         
         /* 此区间的代码会取消移动端页面点击的蓝色背景效果 */
-    body { -webkit-tap-highlight-color: transparent; }
+    /*body { -webkit-tap-highlight-color: transparent; }
     body.dark { background-size: 320px; }
     li.item-session { padding-left: 12px; }
     #footer { width: 100%; }
     #wechat-reward { margin-left: 0; }
     #wechat-reward img { max-width: 67%; }
     .item-discussion-views { right: 90px; }
-    .upl-tpl { margin: 0; }
+    .upl-tpl { margin: 0; }*/
     /* 取消蓝色背景结束 */
 
     .RankingPage.sideNavOffset{ /* 排行最外div */
