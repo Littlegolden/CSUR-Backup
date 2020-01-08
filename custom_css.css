@@ -1,494 +1,818 @@
+.app::-webkit-scrollbar {
+	height: 8px !important;
+	margin: 0px 16px !important;
+}
+
+.app::-webkit-scrollbar-button {
+	color: white !important;
+}
+
+.app:not(:hover)::-webkit-scrollbar-thumb {
+	background: transparent !important;
+}
+
+.app::-webkit-scrollbar-thumb {
+	background: rgb(209, 209, 211) !important;
+	border-radius: 16px !important;
+}
+
+.app:not(:hover)::-webkit-scrollbar-track {
+	background: transparent !important;
+}
+
+.app::-webkit-scrollbar-track {
+	background: rgb(242, 243, 244) !important;
+	border-radius: 20px !important;
+}
+
 /* 全局字体 */
-html body{
-    font-family: sans-serif,Roboto,Helvetica,Arial,system-ui,-apple-system,BlinkMacSystemFont,'System Emoji',"Segoe UI",Ubuntu,Cantarell,Oxygen,Helvetica,'System SC','System Latin';
+html body {
+	font-family: sans-serif, Roboto, Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, 'System Emoji', "Segoe UI", Ubuntu, Cantarell, Oxygen, Helvetica, 'System SC', 'System Latin';
+}
+
+/* LOGO 高度 */
+.Header-logo {
+	max-height: 25px !important;
+}
+
+/* 始终显示首页标签栏 */
+@media (min-width: 992px) {
+
+	.sideNav,
+	.sideNav>ul {
+		width: 190px;
+		position: sticky;
+		top: 80px;
+	}
+
+	.App {
+		overflow-x: visible;
+	}
+}
+
+/* LOGO左侧通知按钮 */
+#Announce {
+	position: fixed !important;
+}
+
+.Announce--Show.fas.fa-bullhorn.false {
+	color: #f00 !important;
+}
+
+i.Announce--Show.fas.fa-bullhorn {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+	animation: announce-pulse 1.5s 2;
+}
+
+@keyframes announce-pulse {
+	0% {
+		transform: scale(0.9);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+	}
+
+	100% {
+		transform: scale(0.9);
+		box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+	}
+}
+
+/* 帖子表情反应 */
+.Reactions .CommentPost--Reactions {
+	max-width: 160px !important;
 }
 
 /* 不显示点赞栏阴影 */
-footer.Post-footer
-{
-     box-shadow:none;
-     background-color:#fff0;
+footer.Post-footer {
+	box-shadow: none;
+	background-color: #fff0;
 }
 
 /* 搜索结果关键字背景色 */
-.DiscussionListItem-main mark{
-     background: #ffff80 !important;
+.DiscussionListItem-main mark {
+	background: #ffff80 !important;
 }
 
 /* Cookie 颜色 */
-a.cc-link:hover{
-    color: #E7672E !important;
+a.cc-link:hover {
+	color: #E7672E !important;
 }
-.cc-message{
-    font-size:12px;
-    white-space: pre-wrap;
-    line-height: initial;
+
+.cc-message {
+	font-size: 12px;
+	white-space: pre-wrap;
+	line-height: initial;
 }
 
 /* 资料卡片排版 */
-.UserCard-info>li { /* 单元格换行显示 */
-    display: block;
+.UserCard-info>li {
+	/* 单元格换行显示 */
+	display: block;
 }
 
-li.item-lastSeen, li.item-joined, li.item-fab, li.item-profile-views, li.item-money, li.social-button, li.item-settings.social-button{ /* 上次在线,注册时间,社交链接,一行显示 */
-    display: inline-block !important;
+li.item-lastSeen,
+li.item-joined,
+li.item-fab,
+li.item-profile-views,
+li.item-money,
+li.social-button,
+li.item-settings.social-button {
+	/* 上次在线,注册时间,社交链接,一行显示 */
+	display: inline-block !important;
+}
+
+/* 用户状态 */
+.ClarkWinkelmannStatus {
+	margin-top: 15px;
 }
 
 /* 会员名录加载更多按钮尺寸 */
-.UserDirectoryList-loadMore .Button, .DiscussionList-loadMore .Button {
-    width: 100%;
+.UserDirectoryList-loadMore .Button,
+.DiscussionList-loadMore .Button {
+	width: 100%;
 }
 
 /* 统一最近访客头像大小 */
-img.Avatar.lastUser-avatar{
-    width: 35px;
-    height: 35px;
+img.Avatar.lastUser-avatar {
+	width: 35px;
+	height: 35px;
 }
 
 fieldset.LastUsers ul li a span.lastUser-avatar {
-    width: 35px !important;
+	width: 35px !important;
 }
 
 /* 隐藏 MD 图片按钮 */
-#MarkdownToolbar button[title="Add an image"], button[title="图片"], button[title="新增圖片"], button[title="画像を追加"] { 
-    display: none;
+#MarkdownToolbar button[title="Add an image"],
+button[title="图片"],
+button[title="新增圖片"],
+button[title="画像を追加"] {
+	display: none;
 }
+
 /* 隐藏原生 emoji 选择器 */
-.TextEditor-toolbar button[data-original-title="表情"], .TextEditor-toolbar button[data-original-title="插入表情符號"], .TextEditor-toolbar button[data-original-title="Insert emoji"] { 
-    display: none;
+.TextEditor-toolbar button[data-original-title="表情"],
+.TextEditor-toolbar button[data-original-title="插入表情符號"],
+.TextEditor-toolbar button[data-original-title="Insert emoji"] {
+	display: none;
 }
 
 /* upload img 帖子图片居中100%显示 */
-.Post .Post-body img.inline-image{
-    max-height: -webkit-fill-available;
-    max-width: -webkit-fill-available;
-    /*max-width: 100%;*/
-    /*width: -webkit-fill-available;*/
+.Post .Post-body img.inline-image {
+	max-height: -webkit-fill-available;
+	max-width: -webkit-fill-available;
+	/*max-width: 100%;*/
+	/*width: -webkit-fill-available;*/
 }
+
 /* [img]图片最小显示宽度取消 */
 .Post img.block-image {
-    min-width: auto !important;
+	min-width: auto !important;
 }
 
 /* 视频宽度跟随帖子宽度 */
 video {
-    max-width: -webkit-fill-available;
+	max-width: -webkit-fill-available;
+}
+
+/* BBBBCode 弹窗宽度 */
+.popcontainer {
+	width: auto;
+}
+
+/* 增加Steam风格黑幕 */
+.steam_spoiler {
+	color: #000000;
+	background-color: #000000;
+	padding: 0px 8px;
+}
+
+.steam_spoiler:hover {
+	color: #FFF;
 }
 
 /*返回顶部开始*/
 .scroll-up {
-    background-color: #f8504b; /*初始颜色*/
-    color:#ffffff; /*文字白色*/
-    transition: transform 0.5s; /*设置效果出现、消失过渡时间*/
+	background-color: #f8504b;
+	/*初始颜色*/
+	color: #ffffff;
+	/*文字白色*/
+	transition: transform 0.5s;
+	/*设置效果出现、消失过渡时间*/
 }
 
-.scroll-up:hover, .scroll-up:focus { /*悬浮、点击样式*/
-    background-color: #f8504b;
-    color:#ffffff;
-    transform: scale(1.1,1.1); /*缩放*/
-    transition:all 100ms; /*动画过渡*/
+.scroll-up:hover,
+.scroll-up:focus {
+	/*悬浮、点击样式*/
+	background-color: #f8504b;
+	color: #ffffff;
+	transform: scale(1.1, 1.1);
+	/*缩放*/
+	transition: all 100ms;
+	/*动画过渡*/
 }
 
 .scroll-up {
-    border-radius: 50px; /*圆角*/
-    bottom: 70px; /*距离网页底部*/
-    padding: 3px;
-    display: none;
-    height: 50px; /*圆高度*/
-    opacity: 1;
-    position: fixed;
-    right: 10px; /*距离网页右边*/
-    text-align: center; /*文本居中*/
-    width: 50px; /*圆宽度*/
-    overflow: hidden; /*属性规定当内容溢出元素框时，修剪多余内容*/
-    z-index: 9999; /*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
-    line-height: 2.5;
-    color: #ffffff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+	border-radius: 50px;
+	/*圆角*/
+	bottom: 70px;
+	/*距离网页底部*/
+	padding: 3px;
+	display: none;
+	height: 50px;
+	/*圆高度*/
+	opacity: 1;
+	position: fixed;
+	right: 10px;
+	/*距离网页右边*/
+	text-align: center;
+	/*文本居中*/
+	width: 50px;
+	/*圆宽度*/
+	overflow: hidden;
+	/*属性规定当内容溢出元素框时，修剪多余内容*/
+	z-index: 9999;
+	/*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
+	line-height: 2.5;
+	color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
 }
-@media (max-width: 992px){
-    .scroll-up {
-        bottom:60px;
-        right:10px;
-        width:40px;
-        height:40px;
-    }
+
+@media (max-width: 992px) {
+	.scroll-up {
+		bottom: 60px;
+		right: 10px;
+		width: 40px;
+		height: 40px;
+	}
 }
+
 /*返回顶部结束*/
 
 
 /* 黑暗模式 */
-body.dark .PostUser-bar.PostUser-bar--empty{
-     background: #1b2028;
+body.dark .PostUser-bar.PostUser-bar--empty {
+	background: #1b2028;
 }
-body.dark select.Select-input.FormControl{
-     background: #1b2028;
+
+body.dark select.Select-input.FormControl {
+	background: #1b2028;
 }
-body.dark a.PostMention{
-     background: #232a35;
+
+body.dark a.PostMention {
+	background: #232a35;
 }
 
 /* 不要在全部标签页上展示竖排、信息流广告，以及在线用户、论坛统计 */
-.TagsPage .item-flagrow-ad, .TagsPage .Flagrow-Ads-fake-poststream-item, .TagsPage .item-onlineUsers, .TagsPage .item-forumStatisticsWidget{ display: none !important; }
+.TagsPage .item-flagrow-ad,
+.TagsPage .Flagrow-Ads-fake-poststream-item,
+.TagsPage .item-onlineUsers,
+.TagsPage .item-forumStatisticsWidget {
+	display: none !important;
+}
 
 /* 手机端显示草稿按钮 */
 @media (max-width: 767px) {
-    .normal .ComposerBody-header>li:first-child {
-        margin-left: 75px;
-        margin-right: 75px;
-    }
+	.normal .ComposerBody-header>li:first-child {
+		margin-left: 75px;
+		margin-right: 75px;
+	}
 
-    .Composer:not(.minimized) .Composer-controls li.item-save-draft {
-        display: block;
-        position: absolute !important;
-        z-index: 1001;
-        top: 0 !important;
-        left: 35px;
+	.Composer:not(.minimized) .Composer-controls li.item-save-draft {
+		display: block;
+		position: absolute !important;
+		z-index: 1001;
+		top: 0 !important;
+		left: 35px;
 
-        >.Button {
-            height: 46px;
-            padding: 13px !important;
-        }
-    }
+		>.Button {
+			height: 46px;
+			padding: 13px !important;
+		}
+	}
 
-    /* 手机端，在会员名录隐藏发送全体邮件按钮，首页加载更多按钮默认宽度 */
-    .IndexPage-toolbar-action li.item-kilowhat-mailing{
-        display:none;
-    }
-    .DiscussionList-loadMore .Button {
-        width: auto;
-    }
+	/* 手机端，在会员名录隐藏发送全体邮件按钮，首页加载更多按钮默认宽度 */
+	.IndexPage-toolbar-action li.item-kilowhat-mailing {
+		display: none;
+	}
+
+	.DiscussionList-loadMore .Button {
+		width: auto;
+	}
 }
 
-/* mobile 移动端不显示在线用户 */ 
+/* mobile  */
 @media(max-width:1000px) {
 
-[class^=item-group], .viv-icon, .IndexPage-nav a img, .item-onlineUsers, .item-flagrow-ad { 
-        display: none !important; }
-        
-        /* 此区间的代码会取消移动端页面点击的蓝色背景效果 */
-    /*body { -webkit-tap-highlight-color: transparent; }
-    body.dark { background-size: 320px; }
-    li.item-session { padding-left: 12px; }
-    #footer { width: 100%; }
-    #wechat-reward { margin-left: 0; }
-    #wechat-reward img { max-width: 67%; }
-    .item-discussion-views { right: 90px; }
-    .upl-tpl { margin: 0; }*/
-    /* 取消蓝色背景结束 */
+	/* 移动端不显示在线用户、谷歌竖排广告 */
+	.item-onlineUsers,
+	.item-flagrow-ad {
+		display: none !important;
+	}
 
-    .RankingPage.sideNavOffset{ /* 排行最外div */
-    width:100%;
-    margin-left:0;
-    }
-    nav.TagsPage-nav.IndexPage-nav.sideNav{
-        display:none;
-    }
-    
-/* 手机端不显示论坛统计 */
-    .item-forumStatisticsWidget{
-        display:none;
-    }
+	.RankingPage.sideNavOffset {
+		/* 排行最外div */
+		width: 100%;
+		margin-left: 0;
+	}
 
+	nav.TagsPage-nav.IndexPage-nav.sideNav {
+		display: none;
+	}
+
+	/* 手机端不显示论坛统计 */
+	.item-forumStatisticsWidget {
+		display: none !important;
+	}
+
+	/* 1000 宽度下隐藏标签栏的y滚动轴 */
+
+	nav.IndexPage-nav.sideNav {
+		overflow-y: hidden;
+	}
 }
 
 /* 页脚 ↓ */
-footer { /*设置页脚上下外边距、左右边距平均分配*/
-    background-color: #fff;
-    padding: 0;
-    margin: 0;
-    width: 100%; /*与网页同宽*/
-    box-shadow: 0 -2px 8px #eee; /*阴影*/
+footer {
+	/*设置页脚上下外边距、左右边距平均分配*/
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	/*与网页同宽*/
+	box-shadow: 0 -2px 8px #eee;
+	/*阴影*/
 }
-.footer-content{
-    width: 800px;
-    margin: 0 auto;
-    padding: 50px 0; /*上下外边距*/
-    display: flex;
-    flex-wrap: nowrap; /*不换行*/
-    justify-content: space-between;
+
+.footer-content {
+	width: 800px;
+	margin: 0 auto;
+	padding: 50px 0;
+	/*上下外边距*/
+	display: flex;
+	flex-wrap: nowrap;
+	/*不换行*/
+	justify-content: space-between;
 }
-.site-info, .cc-footer-license{
-    width: 3800px; /*两个区块的宽度*/
-    color: #aaabab; /*区块内文字颜色*/
+
+.site-info p.cpright {
+    padding-top: 10px;
+    border-top: 1px solid lightgray;
+	margin-top: 15px;
 }
-.site-info{
-        text-align: left; /*文本左对齐*/
-        line-height: 100%; /*文字行高*/
+
+.site-info,
+.cc-footer-license {
+	width: 3800px;
+	/*两个区块的宽度*/
+	color: #aaabab;
+	/*区块内文字颜色*/
 }
-.site-info a, .cc-footer-license a{ /*设置页脚超链接文字的颜色*/
-    color: #aaabab;
-    text-decoration: none;
+
+.site-info {
+	text-align: left;
+	/*文本左对齐*/
+	line-height: 100%;
+	/*文字行高*/
+	padding-right: 20px;
 }
-.site-info a:hover, .cc-footer-license a:hover{ /*设置页脚超链接鼠标悬停颜色*/
-    color: #ea4c89;
+
+.site-info a,
+.cc-footer-license a {
+	/*设置页脚超链接文字的颜色*/
+	color: #aaabab;
+	text-decoration: none;
 }
+
+.site-info a:hover,
+.cc-footer-license a:hover {
+	/*设置页脚超链接鼠标悬停颜色*/
+	color: #ea4c89;
+}
+
 /* 页脚 ↑ */
 
 /* 页脚响应式设计 ↓ */
-@media (max-width:1000px) { /*使用CSS媒体查询来完成响应式设计。当括号中的表达式值为false时，执行大括号中的语句。*/
-    /*浏览器宽度小于1000px时，执行下方的语句*/
-    .footer-content { /*对主要的三大区块和页脚区块同时设置共同的样式*/
-        width:90%; /*内容区域的宽度。我们希望整个网页内容显示宽度就这么宽，所以接下来的每一个主盒子内容宽度都保持一致*/
-        margin: 0 auto; /*上下外边距为0，右左外边距为auto自动平均分配：左右一样多→居中。*/
-    }
+@media (max-width:1000px) {
 
-    .footer-content{
-        margin: 0 auto;
-        padding: 30px 0; /*上下外边距*/
-        display:block;
-    }
-    .footer-content .site-info, .cc-footer-license{
-        margin-bottom: 0px;
-        width:100%;
-    }
-    .site-info{
-        margin-top: 10px;
-    }
+	/*使用CSS媒体查询来完成响应式设计。当括号中的表达式值为false时，执行大括号中的语句。*/
+	/*浏览器宽度小于1000px时，执行下方的语句*/
+	.footer-content {
+		/*对主要的三大区块和页脚区块同时设置共同的样式*/
+		width: 90%;
+		/*内容区域的宽度。我们希望整个网页内容显示宽度就这么宽，所以接下来的每一个主盒子内容宽度都保持一致*/
+		margin: 0 auto;
+		/*上下外边距为0，右左外边距为auto自动平均分配：左右一样多→居中。*/
+	}
+
+	.footer-content {
+		margin: 0 auto;
+		padding: 30px 0;
+		/*上下外边距*/
+		display: block;
+	}
+
+	.footer-content .site-info,
+	.cc-footer-license {
+		margin-bottom: 0px;
+		width: 100%;
+	}
+
+	.site-info {
+		margin-top: 10px;
+		padding-right: 0px;
+	}
 }
+
 /* 页脚响应式设计 ↑ */
 
 /* 页脚黑暗模式 */
 .dark footer.bottomFooter {
-    background-color: #13181e;
-    box-shadow: 0 -2px 8px #00000059;
+	background-color: #13181e;
+	box-shadow: 0 -2px 8px #00000059;
 }
 
-.xintiao { /* 心跳动画 */
-    -webkit-animation: tongtong 0.8s infinite cubic-bezier(0.13, 1.04, 0.83, 1.28);
-    animation: tongtong 0.8s infinite cubic-bezier(0.13, 1.04, 0.83, 1.28);
-    display: inline-block;
-    margin: 0 5px;
+/* 滚动条样式 */
+.app::-webkit-scrollbar {
+	height: 8px;
+	margin: 0px 16px;
 }
-@-webkit-keyframes tongtong { /* 心跳 */
-    0% {
-        -webkit-transform: scale(1)
-    }
-    50% {
-        -webkit-transform: scale(.8)
-    }
-    to {
-        -webkit-transform: scale(1)
-    }
+
+.app::-webkit-scrollbar-button {
+	color: white;
+}
+
+.app:not(:hover)::-webkit-scrollbar-thumb {
+	background: transparent;
+}
+
+.app::-webkit-scrollbar-thumb {
+	background: rgb(209, 209, 211);
+	border-radius: 16px;
+}
+
+.app:not(:hover)::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.app::-webkit-scrollbar-track {
+	background: rgb(242, 243, 244);
+	border-radius: 20px;
+}
+
+/* 动画 */
+
+.xintiao {
+	/* 心跳动画 */
+	-webkit-animation: tongtong 0.8s infinite cubic-bezier(0.13, 1.04, 0.83, 1.28);
+	animation: tongtong 0.8s infinite cubic-bezier(0.13, 1.04, 0.83, 1.28);
+	display: inline-block;
+	margin: 0 5px;
+}
+
+@-webkit-keyframes tongtong {
+
+	/* 心跳 */
+	0% {
+		-webkit-transform: scale(1)
+	}
+
+	50% {
+		-webkit-transform: scale(.8)
+	}
+
+	to {
+		-webkit-transform: scale(1)
+	}
 }
 
 @keyframes tongtong {
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1)
-    }
-    50% {
-        -webkit-transform: scale(.8);
-        transform: scale(.8)
-    }
-    to {
-        -webkit-transform: scale(1);
-        transform: scale(1)
-    }
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
+
+	50% {
+		-webkit-transform: scale(.8);
+		transform: scale(.8)
+	}
+
+	to {
+		-webkit-transform: scale(1);
+		transform: scale(1)
+	}
 }
 
-.my-face { /* 页脚笑脸动画 */
-    -webkit-animation: haha 5s infinite ease-in-out;
-    animation: haha 5s infinite ease-in-out;
-    display: inline-block;
-    margin: 0 5px;
+.my-face {
+	/* 页脚笑脸动画 */
+	-webkit-animation: haha 5s infinite ease-in-out;
+	animation: haha 5s infinite ease-in-out;
+	display: inline-block;
+	margin: 0 5px;
 }
+
 @-webkit-keyframes haha {
-    2%, 24%, 80% {
-        -webkit-transform: translate(0, 1.5px) rotate(1.5deg);
-        transform: translate(0, 1.5px) rotate(1.5deg)
-    }
-    4%, 68%, 98% {
-        -webkit-transform: translate(0, -1.5px) rotate(-.5deg);
-        transform: translate(0, -1.5px) rotate(-.5deg)
-    }
-    38%, 6% {
-        -webkit-transform: translate(0, 1.5px) rotate(-1.5deg);
-        transform: translate(0, 1.5px) rotate(-1.5deg)
-    }
-    8%, 86% {
-        -webkit-transform: translate(0, -1.5px) rotate(-1.5deg);
-        transform: translate(0, -1.5px) rotate(-1.5deg)
-    }
-    10%, 72% {
-        -webkit-transform: translate(0, 2.5px) rotate(1.5deg);
-        transform: translate(0, 2.5px) rotate(1.5deg)
-    }
-    12%, 64%, 78%, 96% {
-        -webkit-transform: translate(0, -.5px) rotate(1.5deg);
-        transform: translate(0, -.5px) rotate(1.5deg)
-    }
-    14%, 54% {
-        -webkit-transform: translate(0, -1.5px) rotate(1.5deg);
-        transform: translate(0, -1.5px) rotate(1.5deg)
-    }
-    16% {
-        -webkit-transform: translate(0, -.5px) rotate(-1.5deg);
-        transform: translate(0, -.5px) rotate(-1.5deg)
-    }
-    18%, 22% {
-        -webkit-transform: translate(0, .5px) rotate(-1.5deg);
-        transform: translate(0, .5px) rotate(-1.5deg)
-    }
-    20%, 36%, 46% {
-        -webkit-transform: translate(0, -1.5px) rotate(2.5deg);
-        transform: translate(0, -1.5px) rotate(2.5deg)
-    }
-    26%, 50% {
-        -webkit-transform: translate(0, .5px) rotate(.5deg);
-        transform: translate(0, .5px) rotate(.5deg)
-    }
-    28% {
-        -webkit-transform: translate(0, .5px) rotate(1.5deg);
-        transform: translate(0, .5px) rotate(1.5deg)
-    }
-    30%, 40%, 62%, 76%, 88% {
-        -webkit-transform: translate(0, -.5px) rotate(2.5deg);
-        transform: translate(0, -.5px) rotate(2.5deg)
-    }
-    32%, 34%, 66% {
-        -webkit-transform: translate(0, 1.5px) rotate(-.5deg);
-        transform: translate(0, 1.5px) rotate(-.5deg)
-    }
-    42% {
-        -webkit-transform: translate(0, 2.5px) rotate(-1.5deg);
-        transform: translate(0, 2.5px) rotate(-1.5deg)
-    }
-    44%, 70% {
-        -webkit-transform: translate(0, 1.5px) rotate(.5deg);
-        transform: translate(0, 1.5px) rotate(.5deg)
-    }
-    48%, 74%, 82% {
-        -webkit-transform: translate(0, -.5px) rotate(.5deg);
-        transform: translate(0, -.5px) rotate(.5deg)
-    }
-    52%, 56%, 60% {
-        -webkit-transform: translate(0, 2.5px) rotate(2.5deg);
-        transform: translate(0, 2.5px) rotate(2.5deg)
-    }
-    58% {
-        -webkit-transform: translate(0, .5px) rotate(2.5deg);
-        transform: translate(0, .5px) rotate(2.5deg)
-    }
-    84% {
-        -webkit-transform: translate(0, 1.5px) rotate(2.5deg);
-        transform: translate(0, 1.5px) rotate(2.5deg)
-    }
-    90% {
-        -webkit-transform: translate(0, 2.5px) rotate(-.5deg);
-        transform: translate(0, 2.5px) rotate(-.5deg)
-    }
-    92% {
-        -webkit-transform: translate(0, .5px) rotate(-.5deg);
-        transform: translate(0, .5px) rotate(-.5deg)
-    }
-    94% {
-        -webkit-transform: translate(0, 2.5px) rotate(.5deg);
-        transform: translate(0, 2.5px) rotate(.5deg)
-    }
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0);
-        transform: translate(0, 0) rotate(0)
-    }
+
+	2%,
+	24%,
+	80% {
+		-webkit-transform: translate(0, 1.5px) rotate(1.5deg);
+		transform: translate(0, 1.5px) rotate(1.5deg)
+	}
+
+	4%,
+	68%,
+	98% {
+		-webkit-transform: translate(0, -1.5px) rotate(-.5deg);
+		transform: translate(0, -1.5px) rotate(-.5deg)
+	}
+
+	38%,
+	6% {
+		-webkit-transform: translate(0, 1.5px) rotate(-1.5deg);
+		transform: translate(0, 1.5px) rotate(-1.5deg)
+	}
+
+	8%,
+	86% {
+		-webkit-transform: translate(0, -1.5px) rotate(-1.5deg);
+		transform: translate(0, -1.5px) rotate(-1.5deg)
+	}
+
+	10%,
+	72% {
+		-webkit-transform: translate(0, 2.5px) rotate(1.5deg);
+		transform: translate(0, 2.5px) rotate(1.5deg)
+	}
+
+	12%,
+	64%,
+	78%,
+	96% {
+		-webkit-transform: translate(0, -.5px) rotate(1.5deg);
+		transform: translate(0, -.5px) rotate(1.5deg)
+	}
+
+	14%,
+	54% {
+		-webkit-transform: translate(0, -1.5px) rotate(1.5deg);
+		transform: translate(0, -1.5px) rotate(1.5deg)
+	}
+
+	16% {
+		-webkit-transform: translate(0, -.5px) rotate(-1.5deg);
+		transform: translate(0, -.5px) rotate(-1.5deg)
+	}
+
+	18%,
+	22% {
+		-webkit-transform: translate(0, .5px) rotate(-1.5deg);
+		transform: translate(0, .5px) rotate(-1.5deg)
+	}
+
+	20%,
+	36%,
+	46% {
+		-webkit-transform: translate(0, -1.5px) rotate(2.5deg);
+		transform: translate(0, -1.5px) rotate(2.5deg)
+	}
+
+	26%,
+	50% {
+		-webkit-transform: translate(0, .5px) rotate(.5deg);
+		transform: translate(0, .5px) rotate(.5deg)
+	}
+
+	28% {
+		-webkit-transform: translate(0, .5px) rotate(1.5deg);
+		transform: translate(0, .5px) rotate(1.5deg)
+	}
+
+	30%,
+	40%,
+	62%,
+	76%,
+	88% {
+		-webkit-transform: translate(0, -.5px) rotate(2.5deg);
+		transform: translate(0, -.5px) rotate(2.5deg)
+	}
+
+	32%,
+	34%,
+	66% {
+		-webkit-transform: translate(0, 1.5px) rotate(-.5deg);
+		transform: translate(0, 1.5px) rotate(-.5deg)
+	}
+
+	42% {
+		-webkit-transform: translate(0, 2.5px) rotate(-1.5deg);
+		transform: translate(0, 2.5px) rotate(-1.5deg)
+	}
+
+	44%,
+	70% {
+		-webkit-transform: translate(0, 1.5px) rotate(.5deg);
+		transform: translate(0, 1.5px) rotate(.5deg)
+	}
+
+	48%,
+	74%,
+	82% {
+		-webkit-transform: translate(0, -.5px) rotate(.5deg);
+		transform: translate(0, -.5px) rotate(.5deg)
+	}
+
+	52%,
+	56%,
+	60% {
+		-webkit-transform: translate(0, 2.5px) rotate(2.5deg);
+		transform: translate(0, 2.5px) rotate(2.5deg)
+	}
+
+	58% {
+		-webkit-transform: translate(0, .5px) rotate(2.5deg);
+		transform: translate(0, .5px) rotate(2.5deg)
+	}
+
+	84% {
+		-webkit-transform: translate(0, 1.5px) rotate(2.5deg);
+		transform: translate(0, 1.5px) rotate(2.5deg)
+	}
+
+	90% {
+		-webkit-transform: translate(0, 2.5px) rotate(-.5deg);
+		transform: translate(0, 2.5px) rotate(-.5deg)
+	}
+
+	92% {
+		-webkit-transform: translate(0, .5px) rotate(-.5deg);
+		transform: translate(0, .5px) rotate(-.5deg)
+	}
+
+	94% {
+		-webkit-transform: translate(0, 2.5px) rotate(.5deg);
+		transform: translate(0, 2.5px) rotate(.5deg)
+	}
+
+	0%,
+	100% {
+		-webkit-transform: translate(0, 0) rotate(0);
+		transform: translate(0, 0) rotate(0)
+	}
 }
 
 @keyframes haha {
-    2%, 24%, 80% {
-        /* -webkit-transform: translate(0, 1.5px) rotate(1.5deg); */
-        /* transform: translate(0, 1.5px) rotate(1.5deg); */
-    }
-    4%, 68%, 98% {
-        /* -webkit-transform: translate(0, -1.5px) rotate(-.5deg); */
-        /* transform: translate(0, -1.5px) rotate(-.5deg) */
-    }
-    38%, 6% {
-        /* -webkit-transform: translate(0, 1.5px) rotate(-1.5deg); */
-        /* transform: translate(0, 1.5px) rotate(-1.5deg); */
-    }
-    8%, 86% {
-        -webkit-transform: translate(0, -1.5px) rotate(-1.5deg);
-        transform: translate(0, -1.5px) rotate(-1.5deg)
-    }
-    10%, 72% {
-        -webkit-transform: translate(0, 2.5px) rotate(1.5deg);
-        transform: translate(0, 2.5px) rotate(1.5deg)
-    }
-    12%, 64%, 78%, 96% {
-        -webkit-transform: translate(0, -.5px) rotate(1.5deg);
-        transform: translate(0, -.5px) rotate(1.5deg)
-    }
-    14%, 54% {
-        -webkit-transform: translate(0, -1.5px) rotate(1.5deg);
-        transform: translate(0, -1.5px) rotate(1.5deg)
-    }
-    16% {
-        -webkit-transform: translate(0, -.5px) rotate(-1.5deg);
-        transform: translate(0, -.5px) rotate(-1.5deg)
-    }
-    18%, 22% {
-        -webkit-transform: translate(0, .5px) rotate(-1.5deg);
-        transform: translate(0, .5px) rotate(-1.5deg)
-    }
-    20%, 36%, 46% {
-        -webkit-transform: translate(0, -1.5px) rotate(2.5deg);
-        transform: translate(0, -1.5px) rotate(2.5deg)
-    }
-    26%, 50% {
-        -webkit-transform: translate(0, .5px) rotate(.5deg);
-        transform: translate(0, .5px) rotate(.5deg)
-    }
-    28% {
-        -webkit-transform: translate(0, .5px) rotate(1.5deg);
-        transform: translate(0, .5px) rotate(1.5deg)
-    }
-    30%, 40%, 62%, 76%, 88% {
-        -webkit-transform: translate(0, -.5px) rotate(2.5deg);
-        transform: translate(0, -.5px) rotate(2.5deg)
-    }
-    32%, 34%, 66% {
-        -webkit-transform: translate(0, 1.5px) rotate(-.5deg);
-        transform: translate(0, 1.5px) rotate(-.5deg)
-    }
-    42% {
-        -webkit-transform: translate(0, 2.5px) rotate(-1.5deg);
-        transform: translate(0, 2.5px) rotate(-1.5deg)
-    }
-    44%, 70% {
-        -webkit-transform: translate(0, 1.5px) rotate(.5deg);
-        transform: translate(0, 1.5px) rotate(.5deg)
-    }
-    48%, 74%, 82% {
-        -webkit-transform: translate(0, -.5px) rotate(.5deg);
-        transform: translate(0, -.5px) rotate(.5deg)
-    }
-    52%, 56%, 60% {
-        -webkit-transform: translate(0, 2.5px) rotate(2.5deg);
-        transform: translate(0, 2.5px) rotate(2.5deg)
-    }
-    58% {
-        -webkit-transform: translate(0, .5px) rotate(2.5deg);
-        transform: translate(0, .5px) rotate(2.5deg)
-    }
-    84% {
-        -webkit-transform: translate(0, 1.5px) rotate(2.5deg);
-        transform: translate(0, 1.5px) rotate(2.5deg)
-    }
-    90% {
-        -webkit-transform: translate(0, 2.5px) rotate(-.5deg);
-        transform: translate(0, 2.5px) rotate(-.5deg)
-    }
-    92% {
-        -webkit-transform: translate(0, .5px) rotate(-.5deg);
-        transform: translate(0, .5px) rotate(-.5deg)
-    }
-    94% {
-        -webkit-transform: translate(0, 2.5px) rotate(.5deg);
-        transform: translate(0, 2.5px) rotate(.5deg)
-    }
-    0%, 100% {
-        -webkit-transform: translate(0, 0) rotate(0);
-        transform: translate(0, 0) rotate(0)
-    }
+
+	2%,
+	24%,
+	80% {
+		/* -webkit-transform: translate(0, 1.5px) rotate(1.5deg); */
+		/* transform: translate(0, 1.5px) rotate(1.5deg); */
+	}
+
+	4%,
+	68%,
+	98% {
+		/* -webkit-transform: translate(0, -1.5px) rotate(-.5deg); */
+		/* transform: translate(0, -1.5px) rotate(-.5deg) */
+	}
+
+	38%,
+	6% {
+		/* -webkit-transform: translate(0, 1.5px) rotate(-1.5deg); */
+		/* transform: translate(0, 1.5px) rotate(-1.5deg); */
+	}
+
+	8%,
+	86% {
+		-webkit-transform: translate(0, -1.5px) rotate(-1.5deg);
+		transform: translate(0, -1.5px) rotate(-1.5deg)
+	}
+
+	10%,
+	72% {
+		-webkit-transform: translate(0, 2.5px) rotate(1.5deg);
+		transform: translate(0, 2.5px) rotate(1.5deg)
+	}
+
+	12%,
+	64%,
+	78%,
+	96% {
+		-webkit-transform: translate(0, -.5px) rotate(1.5deg);
+		transform: translate(0, -.5px) rotate(1.5deg)
+	}
+
+	14%,
+	54% {
+		-webkit-transform: translate(0, -1.5px) rotate(1.5deg);
+		transform: translate(0, -1.5px) rotate(1.5deg)
+	}
+
+	16% {
+		-webkit-transform: translate(0, -.5px) rotate(-1.5deg);
+		transform: translate(0, -.5px) rotate(-1.5deg)
+	}
+
+	18%,
+	22% {
+		-webkit-transform: translate(0, .5px) rotate(-1.5deg);
+		transform: translate(0, .5px) rotate(-1.5deg)
+	}
+
+	20%,
+	36%,
+	46% {
+		-webkit-transform: translate(0, -1.5px) rotate(2.5deg);
+		transform: translate(0, -1.5px) rotate(2.5deg)
+	}
+
+	26%,
+	50% {
+		-webkit-transform: translate(0, .5px) rotate(.5deg);
+		transform: translate(0, .5px) rotate(.5deg)
+	}
+
+	28% {
+		-webkit-transform: translate(0, .5px) rotate(1.5deg);
+		transform: translate(0, .5px) rotate(1.5deg)
+	}
+
+	30%,
+	40%,
+	62%,
+	76%,
+	88% {
+		-webkit-transform: translate(0, -.5px) rotate(2.5deg);
+		transform: translate(0, -.5px) rotate(2.5deg)
+	}
+
+	32%,
+	34%,
+	66% {
+		-webkit-transform: translate(0, 1.5px) rotate(-.5deg);
+		transform: translate(0, 1.5px) rotate(-.5deg)
+	}
+
+	42% {
+		-webkit-transform: translate(0, 2.5px) rotate(-1.5deg);
+		transform: translate(0, 2.5px) rotate(-1.5deg)
+	}
+
+	44%,
+	70% {
+		-webkit-transform: translate(0, 1.5px) rotate(.5deg);
+		transform: translate(0, 1.5px) rotate(.5deg)
+	}
+
+	48%,
+	74%,
+	82% {
+		-webkit-transform: translate(0, -.5px) rotate(.5deg);
+		transform: translate(0, -.5px) rotate(.5deg)
+	}
+
+	52%,
+	56%,
+	60% {
+		-webkit-transform: translate(0, 2.5px) rotate(2.5deg);
+		transform: translate(0, 2.5px) rotate(2.5deg)
+	}
+
+	58% {
+		-webkit-transform: translate(0, .5px) rotate(2.5deg);
+		transform: translate(0, .5px) rotate(2.5deg)
+	}
+
+	84% {
+		-webkit-transform: translate(0, 1.5px) rotate(2.5deg);
+		transform: translate(0, 1.5px) rotate(2.5deg)
+	}
+
+	90% {
+		-webkit-transform: translate(0, 2.5px) rotate(-.5deg);
+		transform: translate(0, 2.5px) rotate(-.5deg)
+	}
+
+	92% {
+		-webkit-transform: translate(0, .5px) rotate(-.5deg);
+		transform: translate(0, .5px) rotate(-.5deg)
+	}
+
+	94% {
+		-webkit-transform: translate(0, 2.5px) rotate(.5deg);
+		transform: translate(0, 2.5px) rotate(.5deg)
+	}
+
+	0%,
+	100% {
+		-webkit-transform: translate(0, 0) rotate(0);
+		transform: translate(0, 0) rotate(0)
+	}
 }
 
 
@@ -554,9 +878,9 @@ footer { /*设置页脚上下外边距、左右边距平均分配*/
 	cursor: pointer;
 }
 
-.mobile-app-icon-bar button svg, .mobile-app-icon-bar button i, .mobile-app-icon-bar button img {
-	
-}
+.mobile-app-icon-bar button svg,
+.mobile-app-icon-bar button i,
+.mobile-app-icon-bar button img {}
 
 
 @media(min-width: 800px) {
