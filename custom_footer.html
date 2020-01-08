@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<!-- 谷歌广告 -->
@@ -9,8 +10,8 @@
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dff8bd9526eb473"></script>
 
 		<!-- 调用js和jquer，完成回到顶部按钮的作用 -->
-		<script type='text/javascript' src='https://bbs.csur.fun/selfJS/jquery.js?ver=1.12.4'></script>
-		<script type='text/javascript' src='https://bbs.csur.fun/selfJS/menu.js?ver=4.9.9'></script>
+		<script type="text/javascript" src="https://bbs.csur.fun/selfJS/jquery.js?ver=1.12.4"></script>
+		<script type="text/javascript" src="https://bbs.csur.fun/selfJS/menu.js?ver=4.9.9"></script>
 		<!-- 调用js和jquer，完成回到顶部按钮的作用 -->
 
 	</head>
@@ -21,36 +22,17 @@
 			<div class="footer-content">
 				<!-- 创建一个盒子，放置页脚内容 -->
 				<div class="site-info">
-					<p>Copyright © 2019 CSUR <a href="https://space.bilibili.com/945398" target="_blank">amamIya</a> 版权所有</p>
-					<p>Other tutorials' and softwares' copyright belong to their original anthor.</p>
-					<p>Build with<span class="xintiao">❤️</span>by Golden | Powered by <a href="https://flarum.org" target="_blank">Flarum</a></p>
+					<p>Build with<span class="xintiao">❤️</span>by Golden | Proudly used <a href="https://flarum.org" target="_blank">Flarum</a></p>
 					<!-- 不蒜子计数 -->
 					<p><span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span></span> | <span id="busuanzi_container_site_vu">UV:
 							<span id="busuanzi_value_site_uv"></span></span></p>
 					<p>
 						<span class="my-face">(●'◡'●)ﾉ</span>
 						<span id="runtime_span"></span>
-						<script type="text/javascript">
-							function show_runtime() {
-								window.setTimeout("show_runtime()", 1000);
-								X = new
-								Date("12/14/2019 15:30:19");
-								Y = new Date();
-								T = (Y.getTime() - X.getTime());
-								M = 24 * 60 * 60 * 1000;
-								a = T / M;
-								A = Math.floor(a);
-								b = (a - A) * 24;
-								B = Math.floor(b);
-								c = (b - B) * 60;
-								C = Math.floor((b - B) * 60);
-								D = Math.floor((c - C) * 60);
-								runtime_span.innerHTML = "论坛🔋已勉强运行 " + A + "天" + B + "小时" + C + "分" + D + "秒"
-							}
-							show_runtime();
-						</script>
-						<p>
 							<!-- 运行时间 -->
+					</p>
+					<p>Copyright © 2017-2020 CSUR. All Rights Reserved.</p>
+					<p>CSUR Team 版权所有</p>
 				</div>
 				<div class="column cc-footer-license">
 					<div class="license-icons">
@@ -64,14 +46,7 @@
 							<p>除非另有<a class="subfoot" href="https://creativecommons.org/policies#license">声明，</a>仅论坛方自制教程采用<a class="subfoot"
 								 href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="license">知识共享"署名-非商业性使用-相同方式共享 4.0
 									国际"许可协议</a>授权。其余模组或教程的版权仍属于他们的原作者。</p>
-							<p><a href="http://www.beian.miit.gov.cn/" target="_blank">苏ICP备18045829号-3</a>　　　　
-								<!-- 站長統計 
-<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278486274'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278486274%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
--->
-							</p>
-
-
-
+							<p>Copyrights for tutorials and software not created by CSUR remain with their original authors.</p>
 						</div>
 					</aside>
 				</div>
@@ -121,8 +96,31 @@
 			}
 		</script>
 		<!-- 底部导航栏 -->
-
-
-
+		
+		
+		<!-- 运行时间js -->
+		<script type="text/javascript">
+			function show_runtime() {
+				window.setTimeout("show_runtime()", 1000);
+				X = new
+				Date("12/14/2019 15:30:19");
+				Y = new Date();
+				T = (Y.getTime() - X.getTime());
+				M = 24 * 60 * 60 * 1000;
+				a = T / M;
+				A = Math.floor(a);
+				b = (a - A) * 24;
+				B = Math.floor(b);
+				c = (b - B) * 60;
+				C = Math.floor((b - B) * 60);
+				D = Math.floor((c - C) * 60);
+				runtime_span.innerHTML = "论坛🔋已勉强运行 " + A + "天" + B + "小时" + C + "分" + D + "秒"
+			}
+			show_runtime();
+		</script>
+		
+		<!-- 站長統計
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278486274'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278486274%26show%3Dpic1' type="text/javascript'%3E%3C/script%3E"));</script>
+		-->
 	</body>
 </html>
