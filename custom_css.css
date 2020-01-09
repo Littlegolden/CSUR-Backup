@@ -84,6 +84,13 @@ i.Announce--Show.fas.fa-bullhorn {
 /* 帖子表情反应 */
 .Reactions .CommentPost--Reactions {
 	max-width: 160px !important;
+	left: -28% !important;
+}
+@media (max-width: 992px) {
+	.Reactions .CommentPost--Reactions{
+		left: auto !important;
+		right: 0 !important;
+	}
 }
 
 /* 不显示点赞栏阴影 */
