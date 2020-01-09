@@ -266,6 +266,9 @@ body.dark select.Select-input.FormControl {
 body.dark a.PostMention {
 	background: #232a35;
 }
+body.dark i.fa.fa-chevron-up {
+    color: #FFF;
+}
 
 /* 不要在全部标签页上展示竖排、信息流广告，以及在线用户、论坛统计 */
 .TagsPage .item-flagrow-ad,
