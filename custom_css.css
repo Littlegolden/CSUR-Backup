@@ -1,29 +1,23 @@
-.app::-webkit-scrollbar {
-	height: 8px !important;
-	margin: 0px 16px !important;
+/* code::-webkit-scrollbar {
+    height: 8px;
+    margin: 0px 16px;
 }
 
-.app::-webkit-scrollbar-button {
-	color: white !important;
+code::-webkit-scrollbar-thumb {
+    background: #e7672e;
+    border-radius: 16px;
 }
 
-.app:not(:hover)::-webkit-scrollbar-thumb {
-	background: transparent !important;
+code::-webkit-scrollbar-track {
+    background: rgb(209, 209, 211);
+    border-radius: 20px;
 }
-
-.app::-webkit-scrollbar-thumb {
-	background: rgb(209, 209, 211) !important;
-	border-radius: 16px !important;
+code::-webkit-scrollbar-button:horizontal:start:increment {//横向 开始端 增量按钮
+    display:block;
 }
-
-.app:not(:hover)::-webkit-scrollbar-track {
-	background: transparent !important;
-}
-
-.app::-webkit-scrollbar-track {
-	background: rgb(242, 243, 244) !important;
-	border-radius: 20px !important;
-}
+code::-webkit-scrollbar-button:horizontal:end:decrement {//横向 末尾端 减量按钮
+    display:block;
+} */
 
 /* 全局字体 */
 html body {
