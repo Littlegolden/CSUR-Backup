@@ -184,7 +184,7 @@ h2{
     letter-spacing: -0.2px;
     white-space: nowrap;
     text-decoration: none;
-    padding: 8px 16px 16px;
+    padding: 16px 16px 16px;
 }
 .activeLink{
 	color: rgb(9, 10, 10);
@@ -198,6 +198,7 @@ h2{
     display: none;
     white-space: nowrap;
 	display: flex;
+	height: 100%;
 }
 .menuOtherBtn{
 	-webkit-appearance: none;
@@ -308,22 +309,29 @@ h2{
 }
 
 .contribute, .budgetContainer{
-	padding: 4rem 1.875rem 0;
+	/* padding: 4rem 1.875rem 0; */
+	padding: 4rem 0 0;
 }
 
 .ctrCardsContainer{
 	display: flex;
+	height: 100%;
+    flex: 0 0 280px;
+	padding-left: 0.625rem ;
+	padding-right: 0.625rem;
+	/* position:relative; */
+}
+
+.card_qr{
+	display: flex;
     flex-direction: column;
     width: 280px;
-    height: 100%;
-    flex: 0 0 280px;
     border-radius: 16px;
     border-width: 1px;
     border-style: solid;
     border-color: rgb(220, 222, 224);
     border-image: initial;
-	margin: 0 0.625rem ;
-	position:relative;
+    position: relative;
 }
 
 .cardHead{
@@ -572,6 +580,10 @@ button.qcloud{
 	cursor: not-allowed;
 }
 
+.serverCard .ctrCardsContainer{
+	padding-left: 1.875rem;
+}
+
 .contributorBoxContainer{
 	box-sizing: border-box;
     margin-top: 8px;
@@ -676,8 +688,8 @@ button.qcloud{
 }
 
 .qr img, .qrcode img{
-	border-radius: 16px;
-	/* height: 22.6875rem; */
+	border-radius: 15px;
+	/* height: 100%; */
 	width: 17.5rem;
 }
 
@@ -944,11 +956,13 @@ section.contributorContainer {
 
 .contributorMainCotainer{
 	box-sizing: border-box;
-	padding: 0 1.875rem;
     padding-top: 80px;
     padding-bottom: 8px;
     background: linear-gradient(0deg, rgb(255, 255, 255) 0px, rgba(255, 255, 255, 0) 75px, rgba(255, 255, 255, 0) calc(100% - 125px), rgb(255, 255, 255) 100%), url(img/bg.svg) center -900px repeat-y;
 	box-shadow: rgba(214, 214, 214, 0.5) 0px 6px 10px -5px;
+}
+.contributorSectionContent{
+	padding: 0 1.875rem;
 }
 
 .contributorSectionContent, .contributorList .switch{
@@ -1004,6 +1018,7 @@ section.contributorContainer {
 }
 
 .contributorListCotainer{
+	box-sizing: border-box;
     position: relative;
     width: 100%;
     overflow: auto;
@@ -1015,7 +1030,6 @@ section.contributorContainer {
 	scroll-behavior: smooth;
 	padding: 1rem 0;
 	overflow-y: hidden;
-	padding-left: 0.625rem;
 }
 
 .contributorCardCotainer{
@@ -1028,18 +1042,20 @@ section.contributorContainer {
 	width: fit-content;
 	/* margin: 0px auto; */
 }
+.contributorCardCotainer > div:first-of-type{
+	margin-left: 0.625rem;
+}
 
 .ctrbutorCardMainCotainer{
 	width: 144px;
-    height: 272px;
+    height: 290px;
     background-color: rgb(255, 255, 255);
     border-width: 1px;
     border-style: solid;
     border-color: rgb(220, 222, 224);
     border-radius: 8px;
     overflow: hidden;
-	margin-right: 2rem;
-	margin-bottom: 2rem;
+	margin: 0 1rem;
 }
 
 .ctrbutorCardMainCotainer a:hover, .ctrbutorAvatar:hover{
@@ -1164,6 +1180,19 @@ section.contributorContainer {
     white-space: nowrap;
 }
 
+.publicMessage{
+	max-height: 79px;
+	font-size: 10px;
+    line-height: 13px;
+    letter-spacing: -0.2px;
+    color: rgb(118, 119, 122);
+    text-align: center;
+    word-break: break-word;
+    font-style: italic;
+    margin: 5px 0px;
+	overflow-y: inherit;
+}
+
 /* 页脚 */
 footer {
     text-align: center;
@@ -1246,7 +1275,7 @@ footer a:hover{
     visibility: visible;
 }
 
-/* 添加箭头 */
+	/* 添加箭头 */
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
@@ -1256,6 +1285,41 @@ footer a:hover{
     border-width: 5px;
     border-style: solid;
     border-color: black transparent transparent transparent;
+}
+/* Tool Tip 结束 */
+
+/* 漫画文字 */
+.comicsans {
+	font-family: 'Comic Sans MS', sans-serif;
+	
+	background-image: -webkit-linear-gradient(top left, #8e6ce0, #00beff, #8e6ce0);
+	background-image: linear-gradient(to top right, #8e6ce0, #00beff);
+	
+	background-size: 200px auto;
+	color:transparent;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	background-clip: text;
+	animation: ComicSansRainbow 6s linear infinite;
+}
+
+@keyframes ComicSansRainbow {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 0; }
+}
+
+/* 黑幕 */
+.spoiler {
+	color: #000000;
+	background-color: #000000;
+	padding: 0px 8px;
+}
+
+.spoiler:hover {
+	color: #FFF;
+}
+.spoiler p{
+	margin: 0;
 }
 
 /* 媒体审查 */
@@ -1346,12 +1410,27 @@ footer a:hover{
 	.hText{
 		padding: 3.75rem 0.9375rem 0;
 	}
-	.contribute, .contributorMainCotainer, .budgetContainer{
+	.card > div:first-of-type {
+	  padding-left: 1.25rem;
+	}
+	.card > div:last-of-type {
+	  padding-right: 1.25rem;
+	}
+	.ctrBoxText,
+	.contributorSectionContent,
+	.budgetContainer
+	{
 		padding-left: 0.9375rem;
 		padding-right: 0.9375rem;
 	}
 	.contributorCardCotainer{
 		min-width: auto;
+	}
+	.contributorCardCotainer > div:first-of-type{
+		margin-left: 1.25rem;
+	}
+	.contributorCardCotainer > div:nth-last-child(2){
+		margin-right: 1.59375rem;
 	}
 	.contributorListCotainer{
 		padding-left: 0;
@@ -1361,126 +1440,94 @@ footer a:hover{
 	}
 }
 
+
 @media (min-width:500px) {
 	/* 滚动条 */
-	.card::-webkit-scrollbar {
+	.card::-webkit-scrollbar,
+	.contributorListCotainer::-webkit-scrollbar,
+	.contributorList::-webkit-scrollbar
+	{
 	    height: 8px;
 	    margin: 0px 16px;
 	}
 	
-	.card::-webkit-scrollbar-button {
+	.publicMessage:window-inactive {
+		/*当焦点不在当前区域滑块的状态*/
+		background: transparent;
+		}
+		
+	.publicMessage::-webkit-scrollbar
+	{
+		width: 8px;
+		margin: 0;
+	}
+	
+	.card::-webkit-scrollbar-button,
+	.contributorListCotainer::-webkit-scrollbar-button,
+	.contributorList::-webkit-scrollbar-button,
+	.publicMessage::-webkit-scrollbar-button
+	{
 	    color: white;
 	}
 	
-	.card:focus::-webkit-scrollbar-thumb {
+	.card:focus::-webkit-scrollbar-thumb,
+	.contributorListCotainer:focus::-webkit-scrollbar-thumb,
+	.contributorList:focus::-webkit-scrollbar-thumb,
+	.publicMessage:focus::-webkit-scrollbar-thumb
+	{
 	    background: #757575;
 	}
 	
-	.card:not(:hover)::-webkit-scrollbar-thumb {
+	.card:not(:hover)::-webkit-scrollbar-thumb,
+	.contributorListCotainer:not(:hover)::-webkit-scrollbar-thumb,
+	.contributorList:not(:hover)::-webkit-scrollbar-thumb,
+	.publicMessage:not(:hover)::-webkit-scrollbar-thumb
+	{
 	    background: transparent;
 	}
 	
-	.card::-webkit-scrollbar-thumb {
+	.card::-webkit-scrollbar-thumb,
+	.contributorListCotainer::-webkit-scrollbar-thumb,
+	.contributorList::-webkit-scrollbar-thumb,
+	.publicMessage::-webkit-scrollbar-thumb
+	{
 	    background: rgb(209, 209, 211);
 	    border-radius: 16px;
 	}
 	
-	.card::-webkit-scrollbar-thumb:hover{
+	.card::-webkit-scrollbar-thumb:hover,
+	.contributorListCotainer::-webkit-scrollbar-thumb:hover,
+	.contributorList::-webkit-scrollbar-thumb:hover,
+	.publicMessage::-webkit-scrollbar-thumb:hover
+	{
 		background-color: #b9b9b9;
 	}
 	
-	.card::-webkit-scrollbar-thumb:active{
+	.card::-webkit-scrollbar-thumb:active,
+	.contributorListCotainer::-webkit-scrollbar-thumb:active,
+	.contributorList::-webkit-scrollbar-thumb:active,
+	.publicMessage::-webkit-scrollbar-thumb:active
+	{
 		background-color: #757575;
 	}
 	
-	.card:not(:hover)::-webkit-scrollbar-track {
+	.card:not(:hover)::-webkit-scrollbar-track,
+	.contributorListCotainer:not(:hover)::-webkit-scrollbar-track,
+	.contributorList:not(:hover)::-webkit-scrollbar-track,
+	.publicMessage:not(:hover)::-webkit-scrollbar-track
+	{
 	    background: transparent;
 	}
 	
-	.card::-webkit-scrollbar-track {
+	.card::-webkit-scrollbar-track,
+	.contributorListCotainer::-webkit-scrollbar-track,
+	.contributorList::-webkit-scrollbar-track,
+	.publicMessage::-webkit-scrollbar-track
+	{
 	    background: rgb(242, 243, 244);
 	    border-radius: 20px;
 	}
 	/* 滚动条 ↑ */
-	
-	.contributorListCotainer::-webkit-scrollbar {
-	    height: 8px;
-	    margin: 0px 16px;
-	}
-	
-	.contributorListCotainer::-webkit-scrollbar-button {
-	    color: white;
-	}
-	
-	.contributorListCotainer:focus::-webkit-scrollbar-thumb {
-	    background: #757575;
-	}
-	
-	.contributorListCotainer:not(:hover)::-webkit-scrollbar-thumb {
-	    background: transparent;
-	}
-	
-	.contributorListCotainer::-webkit-scrollbar-thumb {
-	    background: rgb(209, 209, 211);
-	    border-radius: 16px;
-	}
-	
-	.contributorListCotainer::-webkit-scrollbar-thumb:hover{
-		background-color: #b9b9b9;
-	}
-	
-	.contributorListCotainer::-webkit-scrollbar-thumb:active{
-		background-color: #757575;
-	}
-	
-	.contributorListCotainer:not(:hover)::-webkit-scrollbar-track {
-	    background: transparent;
-	}
-	
-	.contributorListCotainer::-webkit-scrollbar-track {
-	    background: rgb(242, 243, 244);
-	    border-radius: 20px;
-	}
-	
-	/* 滚动条 */
-	.contributorList::-webkit-scrollbar {
-	    height: 8px;
-	    margin: 0px 16px;
-	}
-	
-	.contributorList::-webkit-scrollbar-button {
-	    color: white;
-	}
-	
-	.contributorList:focus::-webkit-scrollbar-thumb {
-	    background: #757575;
-	}
-	
-	.contributorList:not(:hover)::-webkit-scrollbar-thumb {
-	    background: transparent;
-	}
-	
-	.contributorList::-webkit-scrollbar-thumb {
-	    background: rgb(209, 209, 211);
-	    border-radius: 16px;
-	}
-	
-	.contributorList::-webkit-scrollbar-thumb:hover{
-		background-color: #b9b9b9;
-	}
-	
-	.contributorList::-webkit-scrollbar-thumb:active{
-		background-color: #757575;
-	}
-	
-	.contributorList:not(:hover)::-webkit-scrollbar-track {
-	    background: transparent;
-	}
-	
-	.contributorList::-webkit-scrollbar-track {
-	    background: rgb(242, 243, 244);
-	    border-radius: 20px;
-	}
 }
 
 /*返回顶部开始*/
@@ -1516,8 +1563,8 @@ footer a:hover{
 }
 @media (max-width: 992px){
     .scroll-up {
-        bottom:10px;
-        right:10px;
+        bottom:20px;
+        right:20px;
         width:40px;
         height:40px;
     }
@@ -1526,9 +1573,12 @@ footer a:hover{
 
 
 /* 取消移动端a标签点击的蓝色背景 */
-a, div {
+a {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	-webkit-user-select: none;
+	-webkit-user-select: none; /* 禁止选中 */
 	-moz-user-focus: none;
 	-moz-user-select: none;
+}
+div{
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
