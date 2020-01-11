@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://csur.fun/sitemap.xml
