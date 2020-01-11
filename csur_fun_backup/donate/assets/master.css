@@ -19,7 +19,6 @@ body{
 	position: relative;
 	z-index: 1000;
 	min-height: 325px;
-	box-shadow: rgba(214, 214, 214, 0.5) 0px 6px 10px -5px;
 	overflow-x: hidden;
 	overflow-y: hidden;
 }
@@ -119,6 +118,115 @@ h2{
 	border-color: #E65F23;
 	color: #FFF;
 }
+
+/* 菜单栏 */
+.NavbarContainer{
+	box-sizing: border-box;
+    position: sticky;
+    top: 0px;
+    z-index: 9999;
+    margin-top: 0px;
+}
+.NavbarContent{
+	box-shadow: rgba(214, 214, 214, 0.5) 0px 6px 10px -5px;
+	background: white;
+}
+.NavbarContent > *{
+	max-width: 1260px;
+	margin: 0px auto;
+}
+.Navbar{
+	box-sizing: border-box;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: white;
+}
+.menuContainer{
+	box-sizing: border-box;
+    flex-direction: column;
+    /* display: none; */
+	display: flex;
+	flex-direction: row;
+	
+    height: 100%;
+    overflow-x: auto;
+    flex: 2 1 600px;
+    border-bottom: 1px solid rgb(230, 232, 235);
+}
+.menuLinkContainer{
+	cursor: pointer;
+    color: rgb(9, 10, 10);
+    font-weight: 500;
+}
+.menuLinkContainer::after{
+	content: "";
+    display: block;
+    width: 0px;
+    height: 3px;
+    float: right;
+    background: rgb(231, 103, 46);
+    transition: width 0.2s ease 0s;
+}
+.activeMenu:after{
+	    width: 100%;
+	    float: left;
+}
+.menuLink{
+	display: block;
+    color: rgb(113, 117, 122);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 8px 16px 16px;
+}
+.activeLink{
+	color: rgb(9, 10, 10);
+}
+.menuOtherContainer{
+	box-sizing: border-box;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    display: none;
+    white-space: nowrap;
+	display: flex;
+}
+.menuOtherBtn{
+	-webkit-appearance: none;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(118, 119, 122);
+    font-size: 14px;
+    line-height: 21px;
+    min-width: 100px;
+    outline: 0px;
+	border: 1px solid rgb(220, 222, 224);
+    border-image: initial;
+    border-radius: 100px;
+    padding: 8px 16px;
+    margin: 4px 8px;
+}
+.otherBtnImportent{
+	color: rgb(230, 95, 35);
+	border-color: rgb(231, 103, 46);
+}
+.menuOtherBtn:hover{
+	background-color: rgb(247, 248, 250);
+}
+.menuOtherBtn:active{
+	background-color: rgb(230, 95, 35);
+    color: white;
+    border-color: rgb(230, 95, 35);
+}
+
 
 .card{
 	display: flex;
@@ -539,6 +647,11 @@ button.qcloud{
 .qr{
 	position: absolute;
 	z-index: -100;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;  
+	-ms-transition: all 0.2s ease-in-out;  
+	-o-transition: all 0.2s ease-in-out;  
+	transition: all 0.2s ease-in-out;  
 }
 
 .qrcode{
@@ -588,11 +701,6 @@ button.qcloud{
 }
 
 /* 预算 ↓ */
-@media screen and (min-width: 52em){
-.budgetContainer .budgetCard{
-    flex-direction: row;
-}
-}
 .budgetCard{
 	box-sizing: border-box;
     flex-direction: column-reverse;
@@ -635,12 +743,7 @@ button.qcloud{
     padding: 24px;
 	flex-wrap: wrap;
 }
-@media screen and (min-width: 40em){
-	.recentDealList .recentDealListContent {
-		align-items: flex-start;
-		padding: 24px;
-	}
-}
+
 .userAvatarBox{
 	box-sizing: border-box;
     margin-right: 16px;
@@ -749,12 +852,6 @@ button.qcloud{
     margin-right: 0px;
     flex: 1 1 0%;
 }
-@media screen and (min-width: 40em){
-	.recentDealButtonContainer .recentDealButton{
-		margin-left: 8px;
-		margin-right: 8px;
-	}
-}
 .recentDealButton a{
 	cursor: pointer;
     text-decoration: none !important;
@@ -803,19 +900,7 @@ button.normal:active{
     border-radius: 8px;
     overflow: hidden;
 }
-@media screen and (min-width: 40em){
-	.budgetCard .statistics {
-		flex-direction: row;
-	}
-}
-@media screen and (min-width: 52em){
-	.budgetCard .statistics {
-		flex-direction: column;
-		margin-left: 16px;
-		margin-right: 16px;
-		flex: 1 1 300px;
-	}
-}
+
 .statistics p{
 	color: rgb(78, 80, 82);
     margin: 0;
@@ -1161,14 +1246,6 @@ footer a:hover{
     visibility: visible;
 }
 
-/* 取消移动端a标签点击的蓝色背景 */
-a {
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	-webkit-user-select: none;
-	-moz-user-focus: none;
-	-moz-user-select: none;
-}
-
 /* 添加箭头 */
 .tooltip .tooltiptext::after {
     content: " ";
@@ -1181,12 +1258,93 @@ a {
     border-color: black transparent transparent transparent;
 }
 
+/* 媒体审查 */
+@media screen and (min-width: 40em){
+	/* .NavbarContainer{
+		margin-top: -30px;
+	} */
+	.Navbar{
+		padding-left: 30px;
+		padding-right: 30px;
+		position: relative;
+	}
+	.menuContainer{
+		border-bottom: none;
+	}
+	
+	.hText, .budgetContainer, .ctrBoxText, .contributorSectionContent {
+	    padding-left: 30px;
+	    padding-right: 30px;
+		box-sizing: border-box;
+	}
+	
+	.recentDealList .recentDealListContent {
+		align-items: flex-start;
+		padding: 24px;
+	}
+	
+	.recentDealButtonContainer .recentDealButton{
+		margin-left: 8px;
+		margin-right: 8px;
+	}
+	
+	.budgetCard .statistics {
+		flex-direction: row;
+	}
+}
+
+@media screen and (min-width: 52em){
+	.menuContainer{
+		display: flex;
+		flex-direction: row;
+	}
+	.activeMenu::after{
+		width: 100%;
+        float: left;
+	}
+	.menuOtherContainer{
+		display: flex;
+	}
+	
+	.budgetContainer .budgetCard{
+	    flex-direction: row;
+	}
+	
+	.budgetCard .statistics {
+		flex-direction: column;
+		margin-left: 16px;
+		margin-right: 16px;
+		flex: 1 1 300px;
+	}
+}
+
+@media screen and (max-width: 40em){
+	.Navbar {
+		padding-left: 30px;
+		padding-right: 30px;
+		position: relative;
+	}
+}
+@media screen and (max-width: 31.25rem){
+	.menuOtherContainer {
+		display: none;
+	}
+	.NavbarContent{
+		margin: 0 auto;
+	}
+	.Navbar{
+	    width: fit-content;
+	}
+}
+
+/* 移动端 */
+
 @media (max-width: 650px){
 	.headerBg{
 		-webkit-mask-position-x: 20%;
 	}
 	.hText{
-		padding: 3.75rem 0.9375rem;
+		padding: 3.75rem 0.9375rem 0;
 	}
 	.contribute, .contributorMainCotainer, .budgetContainer{
 		padding-left: 0.9375rem;
@@ -1323,4 +1481,54 @@ a {
 	    background: rgb(242, 243, 244);
 	    border-radius: 20px;
 	}
+}
+
+/*返回顶部开始*/
+.scroll-up {
+    background-color: #f8504b; /*初始颜色*/
+    color:#ffffff; /*文字白色*/
+    transition: transform 0.5s; /*设置效果出现、消失过渡时间*/
+}
+
+.scroll-up:hover, .scroll-up:focus { /*悬浮、点击样式*/
+    background-color: #f8504b;
+    color:#ffffff;
+    transform: scale(1.1,1.1); /*缩放*/
+    transition:all 100ms; /*动画过渡*/
+}
+
+.scroll-up {
+    border-radius: 50px; /*圆角*/
+    bottom: 30px; /*距离网页底部*/
+    padding: 3px;
+    display: none;
+    height: 50px; /*圆高度*/
+    opacity: 1;
+    position: fixed;
+    right: 30px; /*距离网页右边*/
+    text-align: center; /*文本居中*/
+    width: 50px; /*圆宽度*/
+    overflow: hidden; /*属性规定当内容溢出元素框时，修剪多余内容*/
+    z-index: 9999; /*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
+    line-height: 2.5;
+    color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+}
+@media (max-width: 992px){
+    .scroll-up {
+        bottom:10px;
+        right:10px;
+        width:40px;
+        height:40px;
+    }
+}
+/*返回顶部结束*/
+
+
+/* 取消移动端a标签点击的蓝色背景 */
+a, div {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	-webkit-user-select: none;
+	-moz-user-focus: none;
+	-moz-user-select: none;
 }
