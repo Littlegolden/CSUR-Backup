@@ -1,24 +1,3 @@
-/* code::-webkit-scrollbar {
-    height: 8px;
-    margin: 0px 16px;
-}
-
-code::-webkit-scrollbar-thumb {
-    background: #e7672e;
-    border-radius: 16px;
-}
-
-code::-webkit-scrollbar-track {
-    background: rgb(209, 209, 211);
-    border-radius: 20px;
-}
-code::-webkit-scrollbar-button:horizontal:start:increment {//横向 开始端 增量按钮
-    display:block;
-}
-code::-webkit-scrollbar-button:horizontal:end:decrement {//横向 末尾端 减量按钮
-    display:block;
-} */
-
 /* 全局字体 */
 html body {
 	font-family: sans-serif, Roboto, Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, 'System Emoji', "Segoe UI", Ubuntu, Cantarell, Oxygen, Helvetica, 'System SC', 'System Latin';
@@ -85,6 +64,19 @@ i.Announce--Show.fas.fa-bullhorn {
 		left: auto !important;
 		right: 0 !important;
 	}
+}
+
+/* 楼主帖子高亮 */
+.CommentPost.Post--by-actor {
+	border-left: solid @config-primary-color;
+}
+
+/* 谷歌广告右侧展示 */
+li.item-flagrow-ad {
+    position: absolute;
+    left: 1120px;
+    top: 0;
+	width: 190px;
 }
 
 /* 不显示点赞栏阴影 */
@@ -164,15 +156,15 @@ button[title="画像を追加"] {
 
 /* upload img 帖子图片居中100%显示 */
 .Post .Post-body img.inline-image {
-	max-height: -webkit-fill-available;
-	max-width: -webkit-fill-available;
-	/*max-width: 100%;*/
-	/*width: -webkit-fill-available;*/
+	max-height: 420px;
+	max-width: 100%;
+	margin: 0;
 }
 
 /* [img]图片最小显示宽度取消 */
 .Post img.block-image {
 	min-width: auto !important;
+	margin: 0 !important;
 }
 
 /* 视频宽度跟随帖子宽度 */
@@ -854,6 +846,13 @@ footer {
 		z-index: 2;
 		background: #fff;
 		/*border: 1px solid #fff !important;*/
+	}
+	/* addthis 上移 */
+	.at-expanding-share-button[data-position=bottom-right] {
+	    bottom: 58px !important;
+	}
+	.scroll-up {
+	    bottom: 108px;
 	}
 }
 

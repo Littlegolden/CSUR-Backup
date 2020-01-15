@@ -4,14 +4,14 @@
 		<!-- 谷歌广告 -->
 		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 引入点击特效、页脚计数器 -->
-		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+		<script async src="//cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 		<script src="https://bbs.csur.fun/selfJS/JSClickBubble.js"></script>
 		<!-- Go to www.addthis.com/dashboard to customize your tools 引入分享按钮-->
 		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dff8bd9526eb473"></script>
 
 		<!-- 调用js和jquer，完成回到顶部按钮的作用 -->
-		<script type="text/javascript" src="https://bbs.csur.fun/selfJS/jquery.js?ver=1.12.4"></script>
-		<script type="text/javascript" src="https://bbs.csur.fun/selfJS/menu.js?ver=4.9.9"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Littlegolden/CDN@1.1/scrollTop/jquery.js?ver=1.12.4"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Littlegolden/CDN@1.1/scrollTop/menu.js?ver=4.9.9"></script>
 		<!-- 调用js和jquer，完成回到顶部按钮的作用 -->
 
 	</head>
@@ -54,7 +54,7 @@
 		</footer>
 
 		<!-- 回到顶部 -->
-		<a href="#" class="scroll-up">
+		<a href="#" class="scroll-up" style="display: none;">
 			<!-- i标签是用来显示斜体文本效果的，不过大多数时候，因为它比span少三个字母，所以很多人用i标签来放置图标。 -->
 			<i class="fa fa-chevron-up"></i> <!-- fa fa-chevron-up是在线导入的css中的图标样式 -->
 		</a>
@@ -103,7 +103,7 @@
 			function show_runtime() {
 				window.setTimeout("show_runtime()", 1000);
 				X = new
-				Date("12/14/2019 15:30:19");
+				Date("12/12/2019 10:38:34");
 				Y = new Date();
 				T = (Y.getTime() - X.getTime());
 				M = 24 * 60 * 60 * 1000;
@@ -118,9 +118,5 @@
 			}
 			show_runtime();
 		</script>
-		
-		<!-- 站長統計
-		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1278486274'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1278486274%26show%3Dpic1' type="text/javascript'%3E%3C/script%3E"));</script>
-		-->
 	</body>
 </html>
