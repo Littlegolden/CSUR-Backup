@@ -838,13 +838,12 @@ footer {
 		-webkit-justify-content: space-around;
 		-ms-flex-pack: distribute;
 		justify-content: space-around;
-		background: #fff;
+		background: none;
 		position: sticky;
 		bottom: 0;
 		width: 100%;
 		height: 48px;
 		z-index: 2;
-		background: #fff;
 		/*border: 1px solid #fff !important;*/
 	}
 	/* addthis 上移 */
@@ -861,8 +860,9 @@ footer {
 }
 
 .buttonstyle {
-	width: 20%;
-	display: flex;
+	width: 100%;
+	height: 100%;
+	display: block;
 	flex-direction: column;
 	align-items: center;
 	background: #E7672E !important;
@@ -909,10 +909,10 @@ footer {
 	}
 	/* 帖子计数 */
 	.App-header .Button, .App-header .Button:hover{
-		color: #e8e8e8;
+		color: white;
 	}
 	.DiscussionListItem-count, .App-header .Button--link, .App-header .Search-input{
-		color: #e8e8e8;
+		color: white;
 	}
 	/* 统计 */
 	li.item-forumStatisticsWidget {
@@ -953,6 +953,13 @@ footer {
 	    box-shadow: 0 4px 30px 0 rgba(0,0,0,0.1) !important;
 	    background: #fff;
 	}
+	/* 帖子滚动条 */
+	.Scrubber-handle{
+		background: none;
+	}
+	.Scrubber a, .Scrubber-description{
+		color: white;
+	}
 	/* 春节灯笼 */
 	.DiscussionListItem:before {
 	    content: '　';
@@ -980,6 +987,9 @@ footer {
 		top: 1px;
 		right: -10px;
 	}
+	.DiscussionListItem:hover{
+		background: none;
+	}
 	.IndexPage-results .DiscussionListItem-content {
 	    padding-left: 80px;
 	    padding-right: 80px;
@@ -988,9 +998,16 @@ footer {
 		border: 3px solid #f9bd89;
 		box-shadow: 0px 1px 1px #c68045 inset, 0px 1px 2px #861e25, 0px 5px 5px rgba(90, 90, 90, 0.4);
 		background-color: #ed4e60;
-		background-image: radial-gradient(circle at left bottom, #c23b41 0%, rgba(255, 255, 255, 0) 100%),
+		background-image: 
+			radial-gradient(circle at left bottom, #c23b41 0%, rgba(255, 255, 255, 0) 100%),
 			radial-gradient(circle at right bottom, #c23b41 5%, rgba(255, 255, 255, 0) 100%),
 			radial-gradient(circle at bottom, #c23b41 5%, rgba(255, 255, 255, 0) 100%);
+	}
+	.DiscussionListItem-content:hover{
+		background-image: 
+			radial-gradient(circle at left bottom, #9c181d 0%,rgba(255,255,255,0) 100%),
+			radial-gradient(circle at right bottom, #ad252b 5%, rgba(255,255,255,0) 100%),
+			radial-gradient(circle at bottom, #d64d53 5%, rgba(255,255,255,0) 100%);
 	}
 	h3.DiscussionListItem-title, .DiscussionList:not(.DiscussionList--searchResults) .read .DiscussionListItem-title {
 	    color: #ffd9ac !important;
@@ -1020,6 +1037,10 @@ footer {
 	    border: 2px solid #fff2ae;
 	}
 	/* 祥云 */
+	.lantern{
+		z-index: 0;
+		position: sticky;
+	}
 	i.lantern1 {
 	    background-image: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/xiangYun.svg);
 	    position: absolute;
@@ -1027,11 +1048,10 @@ footer {
 	    display: block;
 	    width: 200px;
 	    height: 200px;
-	    right: 0;
-		top: 300px;
+	    right: 10%;
+		top: 2.25rem;	
 	    transform: rotate(-15deg);
 	    opacity: 0.2;
-		z-index: 1;
 	}
 	i.lantern2 {
 	    background-image: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/xiangYun.svg);
@@ -1042,22 +1062,20 @@ footer {
 	    height: 200px;
 	    transform: rotate(58deg);
 	    opacity: 0.2;
-		top: 2500px;
-		left: -45px;
-		z-index: 1;
+		top: 40rem;
+		left: -0.9375rem;
 	}
 	i.lantern3{
 		background-image: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/xiangYun.svg);
-		position: absolute;
+		position: fixed;
 		background-repeat: no-repeat;
 		display: block;
 		width: 200px;
 		height: 200px;
-		right: 0;
-		bottom: 550px;
+		right: 0%;
+		bottom: -2.8125rem;
 		transform: rotate(-220deg);
 		opacity: 0.2;
-		z-index: 1;
 	}
 	/* 摇摆灯笼 */
 	.polaroid {
@@ -1107,25 +1125,26 @@ footer {
 	        transform: translateX(-50%) rotate(10deg);
 	    }
 	}
-	
-	.Flagrow-Ads-under-header {
-	    position: sticky;
-	    top: 0px;
-	}
+
 	.yaobai{
 		overflow: hidden;
+		position: sticky;
+		top: 0;
 	}
 	.dizi{
 		background: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/20200121234221_01025Lantern.png) no-repeat;
 		display: block;
 		height: 800px;
 		width: 400px;
-		position: absolute;
+		position: fixed;
 		top: -145px;
 		left: 10%;
 	}
-	
-	/* 鼠年勋章 */
+
+}
+
+/* 全局 */
+/* 鼠年勋章 */
 	i.icon.fas.fa-rat.Badge-icon {
 	    position: relative;
 	}
@@ -1139,5 +1158,3 @@ footer {
 		top: -18px;
 		left: -10px;
 	}
-
-}
