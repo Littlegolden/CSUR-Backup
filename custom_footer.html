@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<!-- 谷歌广告 -->
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- 引入点击特效、页脚计数器 -->
 		<script async src="//cdn.busuanzi.ibruce.info/cdn/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 		<script src="https://bbs.csur.fun/selfJS/JSClickBubble.js"></script>
-		<!-- Go to www.addthis.com/dashboard to customize your tools 引入分享按钮-->
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5dff8bd9526eb473"></script>
 
 		<!-- 调用js和jquer，完成回到顶部按钮的作用 -->
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Littlegolden/CDN@1.1/scrollTop/jquery.js?ver=1.12.4"></script>
@@ -31,7 +27,7 @@
 						<span id="runtime_span"></span>
 							<!-- 运行时间 -->
 					</p>
-					<p class="cpright">Copyright © 2017-2020 CSUR. All Rights Reserved.</p>
+					<p class="cpright">Copyright © 2017 - 2020 CSUR. All Rights Reserved.</p>
 					<p>CSUR Team 版权所有</p>
 				</div>
 				<div class="column cc-footer-license">
@@ -68,15 +64,15 @@
 		<!-- 底部导航栏 -->
 		<div class="mobile-app-icon-bar" id="myDIV">
 			<button onclick="location.href='https://bbs.csur.fun/'" class="buttonstyle"><i class="fa fa-home"></i>
-				<span class="spanstyle">首页</span></button>
+				<span class="spanstyle"></span></button>
 			<button onclick="location.href='https://bbs.csur.fun/tags'" class="buttonstyle"><i class="fas fa-tags"></i>
-				<span class="spanstyle">标签</span></button>
+				<span class="spanstyle"></span></button>
 			<button onclick="location.href='https://bbs.csur.fun/composer'" class="buttonstyle"><i class="fas fa-edit"></i>
-				<span class="spanstyle">发布</span></button>
+				<span class="spanstyle"></span></button>
 			<button onclick="location.href='https://bbs.csur.fun/settings'" class="buttonstyle"><i class="fas fa-user-cog"></i>
-				<span class="spanstyle">设置</span></button>
+				<span class="spanstyle"></span></button>
 			<button onclick="location.href='https://bbs.csur.fun/notifications'" class="buttonstyle"><i class="fas fa-bell"></i>
-				<span class="spanstyle">通知</span></button>
+				<span class="spanstyle"></span></button>
 		</div>
 		<script>
 			var btnContainer = document.getElementById("myDIV");
@@ -118,5 +114,27 @@
 			}
 			show_runtime();
 		</script>
+
+<script>
+    // 个性化网页标题
+    var OriginTitile = document.title,
+    titleTime;
+    document.addEventListener("visibilitychange", function() {
+        if (document.hidden) {
+            document.title = "🏮鼠年大吉！Happy Chinese New Year";
+            clearTimeout(titleTime)
+        } else {
+            document.title = "🧨CSUR 祝您阖家欢乐，万事如意！| " + OriginTitile;
+            titleTime = setTimeout(function() {
+                document.title = "🏮" + OriginTitile;
+            },
+            10000)
+        }
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/gh/Littlegolden/CDN@1.1.10/js/petals_mobile.js"></script>
+
 	</body>
 </html>
+
+

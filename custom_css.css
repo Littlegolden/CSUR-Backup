@@ -78,6 +78,11 @@ li.item-flagrow-ad .sideads {
     top: 0;
 	width: 190px;
 }
+@media (max-width:1570px) and (min-width:1000px) {
+	.IndexPage .container {
+	    margin-right: 20%;
+	}
+}
 
 /* 不显示点赞栏阴影 */
 footer.Post-footer {
@@ -911,18 +916,16 @@ footer {
 	.App-header .Button, .App-header .Button:hover{
 		color: white;
 	}
-	.DiscussionListItem-count, .App-header .Button--link, .App-header .Search-input{
+	.IndexPage .DiscussionListItem-count, .App-header .Button--link, .App-header .Search-input{
 		color: white;
 	}
 	/* 统计 */
-	li.item-forumStatisticsWidget {
-	    /* display: flex; */
+	li.item-forumStatisticsWidget, fieldset.LastUsers, .LastUsers legend {
 	    background: #fff;
 	    padding-left: 5px;
-	    /* padding-right: 5px; */
 	    padding-top: 5px;
 	    padding-bottom: 5px;
-	    box-shadow: 0 1px 5px 0 rgba(151,158,181,.28)!important;
+	    box-shadow: 0 1px 5px 0 rgba(151,158,181,.28);
 	    border-radius: 6px;
 	    box-sizing: content-box;
 	}
@@ -935,6 +938,10 @@ footer {
 	.Hero h2{
 		font-weight: bolder;
 	}
+	/* 删除banner上边框 */
+	.App-content {
+	    border-top: none;
+	}
 	/* 帖子 */
 	.DiscussionListItem {
 	    position: relative;
@@ -943,17 +950,17 @@ footer {
 	    border-radius: 5px;
 	    margin-top: 18px;
 	}
-	.DiscussionListItem-info .item-excerpt {
+	.DiscussionListItem-main .DiscussionListItem-info .item-excerpt {
 	    color: #191919 !important;
-	    text-shadow: 0px 0px 5px white !important;
+	    text-shadow: 0px 0px 5px white;
 	}
 	.DiscussionPage .CommentPost {
 	    border-radius: 8px;
 	    margin-top: 20px;
-	    box-shadow: 0 4px 30px 0 rgba(0,0,0,0.1) !important;
+	    box-shadow: 0 4px 30px 0 rgba(0,0,0,0.1);
 	    background: #fff;
 	}
-	/* 帖子滚动条 */
+	/* 帖子右侧信息滚动条 */
 	.Scrubber-handle{
 		background: none;
 	}
@@ -961,8 +968,8 @@ footer {
 		color: white;
 	}
 	/* 春节灯笼 */
-	.DiscussionListItem:before {
-	    content: '　';
+	.IndexPage .DiscussionListItem:before {
+	    content: '';
 	    position: absolute;
 	    background-image: url('https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/Lantern_Shadow_69x186.png');
 		background-size: cover;
@@ -974,8 +981,8 @@ footer {
 		left: -14px;
 		top: 1px;
 	}
-	.DiscussionListItem:after {
-		content: '　';
+	.IndexPage .DiscussionListItem:after {
+		content: '';
 		position: absolute;
 		background-image: url('https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/Lantern_Shadow_69x186_r.png');
 		background-size: cover;
@@ -987,10 +994,10 @@ footer {
 		top: 1px;
 		right: -10px;
 	}
-	.DiscussionListItem:hover{
+	.IndexPage .DiscussionListItem:hover{
 		background: none;
 	}
-	.IndexPage-results .DiscussionListItem-content {
+	.IndexPage .IndexPage-results .DiscussionListItem-content {
 	    padding-left: 80px;
 	    padding-right: 80px;
 	    padding-top: 0;
@@ -1003,18 +1010,27 @@ footer {
 			radial-gradient(circle at right bottom, #c23b41 5%, rgba(255, 255, 255, 0) 100%),
 			radial-gradient(circle at bottom, #c23b41 5%, rgba(255, 255, 255, 0) 100%);
 	}
-	.DiscussionListItem-content:hover{
+	.IndexPage .DiscussionListItem-content:hover{
 		background-image: 
 			radial-gradient(circle at left bottom, #9c181d 0%,rgba(255,255,255,0) 100%),
 			radial-gradient(circle at right bottom, #ad252b 5%, rgba(255,255,255,0) 100%),
 			radial-gradient(circle at bottom, #d64d53 5%, rgba(255,255,255,0) 100%);
 	}
-	h3.DiscussionListItem-title, .DiscussionList:not(.DiscussionList--searchResults) .read .DiscussionListItem-title {
+	.IndexPage h3.DiscussionListItem-title{
+		font-weight: bolder;
+		color: #feff9e;
+		text-shadow: 0px 2px 5px #52050d;
+	}
+	
+	.IndexPage .DiscussionList:not(.DiscussionList--searchResults) .read .DiscussionListItem-title {
 	    color: #ffd9ac !important;
 	    text-shadow: 0px 2px 8px #901e1e;
 	}
-	ul.DiscussionListItem-info{
+	.IndexPage ul.DiscussionListItem-info{
 		color:#e8e8e8;
+	}
+	.CommentPost.Post--by-actor { /* 个人发的帖子左侧线条 */
+	    border-left: solid #ffffff;
 	}
 	/* 春节背景 */
 	/* 中间背景 */
@@ -1032,9 +1048,33 @@ footer {
 	.IndexPage-nav .item-newDiscussion .Button{
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3686274509803922);
 	}
+	/* 帖子设置按钮 */
+	.DiscussionListItem-controls {
+	    z-index: 99;
+	}
 	/* 头像 */
-	.DiscussionListItem-content img.Avatar {
+	.DiscussionListItem-content img.Avatar, .DiscussionListItem-content span.Avatar{
 	    border: 2px solid #fff2ae;
+	}
+	/* 个人主页 */
+	.UserPage .UserCard-profile { /* 社交卡片 */
+	    text-shadow: 0px 0px 4px white;
+	}
+	.sideNavOffset.UserPage-content { /* 回复列表 */
+	    z-index: 1;
+	}
+	.UserPage .DiscussionList-discussions {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		position: relative;
+	}
+	.UserPage ul.DiscussionList-discussions>li:not(:last-child){
+		border-bottom: 1px solid #eaedf1;
+		margin: 15px 0;
+	}
+	.UserPage .DiscussionListItem-content{
+		margin-bottom: 15px;
 	}
 	/* 祥云 */
 	.lantern{
@@ -1140,6 +1180,101 @@ footer {
 		top: -145px;
 		left: 10%;
 	}
+	
+	/* 头套 */
+	.UserCard-avatar:before {/* 个人主页 */
+	    content: "";
+	    background: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/ratHat_156x106.png)no-repeat;
+	    display: block;
+	    background-size: cover;
+	    width: 8.875rem;
+	    height: 6.125rem;
+	    position: absolute;
+	    background-repeat: no-repeat;
+	    top: -0.625rem;
+	    left: -1.4375rem;
+	}
+	.IndexPage .DiscussionListItem-author:before { /* 首页信息流头像 */
+	    content: "";
+	    background: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/ratHat_66x45.png)no-repeat;
+	    display: block;
+	    background-size: cover;
+	    width: 60px;
+	    height: 40px;
+	    position: absolute;
+	    background-repeat: no-repeat;
+	    z-index: 1;
+	    top: 8px;
+	    left: 17px;
+	}
+	.DiscussionListItem-badges .Badge {/* 显示在帽子之上 */
+	    z-index: 2;
+	}
+	fieldset>ul>li { /* 个人主页访客 */
+	    position: relative;
+	}
+	fieldset.LastUsers li:before {
+	    content: "";
+	    background: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/ratHat_66x45.png)no-repeat;
+	    display: flex;
+	    background-size: cover;
+	    width: 52px;
+	    height: 35px;
+	    position: absolute;
+	    background-repeat: no-repeat;
+	    z-index: 1;
+	    top: -5px;
+	    left: -9px;
+	}
+	.DiscussionPage .PostUser:before {/* 讨论页 */
+	    content: "";
+	    background: url(https://cdn.jsdelivr.net/gh/Littlegolden/CDN/img/ratHat_113x77.png)no-repeat;
+	    display: block;
+	    background-size: cover;
+	    width: 102px;
+	    height: 70px;
+	    position: absolute;
+	    background-repeat: no-repeat;
+	    z-index: 1;
+	    top: -10px;
+	    left: -103px;
+	}
+	.DiscussionPage .PostUser-badges .Badge { /* 用户组标识往上一层 */
+		margin-left: -10px;
+		position: relative;
+		pointer-events: auto;
+		z-index: 2;
+	}
+	.DiscussionPage .item-bestAnswerPost .PostUser:before { /* 最佳答案前不显示 */
+		content: "";
+	    background: none;
+	}
+	/* 最佳答案 */
+	li.item-bestAnswerPost .CommentPost {
+	    padding: 5px;
+		margin-top: 0;
+	}
+	/* Loading */
+	div#flarum-loading {
+	    color: white;
+	    text-shadow: 0px 0px 2px white;
+	}
+	/* 一生二二生三 */
+	.Placeholder p {
+	    color: white;
+	    text-shadow: 0 0 1px white;
+	}
+	/* 加载提示 */
+	.spinner div{
+		box-shadow: 0 0 2px white;
+	}
+	/* 谷歌广告的提示 */
+	.Flagrow-Ads-between-posts p{
+		text-shadow: 1px 1px 0px white, 1px -1px 0px white, -1px 1px 0px white, -1px -1px 0px white;
+	}
+	.EventPost, .ReplyPlaceholder{
+		text-shadow: 1px 1px 0px white, 1px -1px 1px white, -1px 1px 1px white, -1px -1px 1px white;
+	}
 
 }
 
@@ -1158,3 +1293,5 @@ footer {
 		top: -18px;
 		left: -10px;
 	}
+	
+	
