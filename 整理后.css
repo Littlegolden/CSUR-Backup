@@ -885,7 +885,7 @@
 	    color: white;
 	    text-shadow: 0 0 1px white;
 	}
-	
+
 	/* 春节背景 */
 	/* 中间背景 */
 	div#app{
@@ -1040,13 +1040,25 @@
 		box-shadow: 0 4px 30px 0 rgba(0,0,0,0.1);
 		background: #fff;
 	}
-	/* 帖子计数 */
-	.App-header .Button, .App-header .Button:hover{
+	/* 帖子计数,标题栏等按钮颜色 */
+	.App-header .Button{
 		color: white;
 	}
 	.IndexPage .DiscussionListItem-count, .App-header .Button--link, .App-header .Search-input{
 		color: white;
 	}
+	.App-header .Button:hover{
+		color: white;
+		text-shadow: 0 0 2px white;
+	}
+	.NotificationList-header .Button:hover{
+		color: #af353b;
+	}
+		/* 全部已读按钮颜色不受此影响 */
+		.NotificationList-header .Button {
+		    color: #667d99;
+		}
+		
 	/* 帖子设置按钮 */
 	.DiscussionListItem-controls {
 		z-index: 99;
