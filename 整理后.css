@@ -1167,6 +1167,10 @@
 	.EventPost, .DiscussionPage-stream .ReplyPlaceholder, .DiscussionPage-stream .PostStream-timeGap{
 		text-shadow: 1px 1px 1px white, 1px -1px 1px white, -1px 1px 1px white, -1px -1px 1px white;
 	}
+		/* 不影响添加标签提示 */
+		.DiscussionTaggedPost .TagsLabel{
+			text-shadow: none;
+		}
 	
 	/* 个人主页 ↓ */
 	.UserPage .UserCard-profile { /* 社交卡片 */
@@ -1259,6 +1263,40 @@
 		background: none;
 	}
 
+}
+
+/* z-index setting */
+@media (min-width: 500px) {
+	.lantern{
+		z-index: 0;
+	}
+	.IndexPage .DiscussionListItem:before,
+	.IndexPage .DiscussionListItem:after,
+	.sideNavOffset.UserPage-content,
+	.IndexPage .DiscussionListItem-author:before,
+	fieldset.LastUsers li:before,
+	.DiscussionPage .PostUser:before{
+		z-index: 1;
+	}
+	.IndexPage .sideNavOffset,
+	.DiscussionListItem-badges .Badge,
+	.DiscussionPage .PostUser-badges .Badge{
+	    z-index: 2;
+	}
+	.DiscussionListItem-controls {
+		z-index: 99;
+	}
+}
+@media (max-width: 1400px) and (min-width: 768px){
+	.IndexPage .sideNavContainer,
+	.UserPage .UserCard-profile {
+	    position: relative;
+	}
+}
+@media (max-width: 991px) and (min-width: 768px){
+	nav.IndexPage-nav.sideNav {
+	    position: relative;
+	}
 }
 	
 /* 全局 */
