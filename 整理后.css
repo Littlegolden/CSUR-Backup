@@ -1291,11 +1291,11 @@
 	}
 	.IndexPage .sideNavContainer,
 	.sideNavOffset.UserPage-content,
-	.UserPage .UserCard-profile{
+	.UserPage .UserCard-profile{ /* 解决头像挂件位置偏移等问题 */
 		position: relative;
 	}
 }
-/* 解决头像挂件位置偏移问题 */
+/* 层级问题 */
 @media (max-width: 991px) and (min-width: 500px){
 	nav.IndexPage-nav.sideNav{
 	    position: relative;
