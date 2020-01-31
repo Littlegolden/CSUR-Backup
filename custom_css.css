@@ -1264,6 +1264,9 @@ footer {
 	    color: white;
 	    text-shadow: 0 0 1px white;
 	}
+	.UserPage .Placeholder p{
+		color: black;
+	}
 	/* 加载提示 */
 	.spinner div{
 		box-shadow: 0 0 2px white;
