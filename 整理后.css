@@ -52,7 +52,7 @@
 	
 	/* 讨论页优化 ↓ */
 	/* 个人发的帖子左侧高亮标记 */
-	.CommentPost.Post--by-actor {
+	.DiscussionPage .CommentPost.Post--by-actor {
 		border-left: solid @config-primary-color;
 	}
 	
@@ -383,8 +383,8 @@
 		display: block;
 		flex-direction: column;
 		align-items: center;
-		background: #E7672E !important;
-		color: #ffffff !important;
+		background: @config-primary-color;
+		color: #ffffff;
 		border: none;
 		margin-top: 4px;
 	}
@@ -1155,9 +1155,6 @@
 	.Scrubber a, .Scrubber-description{
 		color: white;
 	}
-	.CommentPost.Post--by-actor { /* 个人发的帖子左侧线条 */
-		border-left: solid #ffffff;
-	}
 	/* 最佳答案 */
 	li.item-bestAnswerPost .CommentPost {
 		padding: 5px;
@@ -1293,6 +1290,9 @@
 	.sideNavOffset.UserPage-content,
 	.UserPage .UserCard-profile{ /* 解决头像挂件位置偏移等问题 */
 		position: relative;
+	}
+	.UserPage .UserCard-controls{ /* 用户资料设置按钮 */
+		z-index: 1;
 	}
 }
 /* 层级问题 */
