@@ -115,25 +115,6 @@
 			show_runtime();
 		</script>
 
-<script>
-    // 个性化网页标题
-    var OriginTitile = document.title,
-    titleTime;
-    document.addEventListener("visibilitychange", function() {
-        if (document.hidden) {
-            document.title = "🏮鼠年大吉！Happy Chinese New Year";
-            clearTimeout(titleTime)
-        } else {
-            document.title = "🧨CSUR 祝您阖家欢乐，万事如意！| " + OriginTitile;
-            titleTime = setTimeout(function() {
-                document.title = "🏮" + OriginTitile;
-            },
-            10000)
-        }
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/gh/Littlegolden/CDN@1.1.10/js/petals_mobile.js"></script>
-
 	</body>
 </html>
 
