@@ -79,6 +79,11 @@
 		}
 	}
 	
+	/* 信息流广告宽度限制 */
+	.Flagrow-Ads-fake-poststream-item {
+	    overflow: hidden;
+	}
+	
 	/* 不要在全部标签页上展示竖排、信息流广告，以及在线用户、论坛统计 */
 	.TagsPage .item-flagrow-ad,
 	.TagsPage .Flagrow-Ads-fake-poststream-item,
