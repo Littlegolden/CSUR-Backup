@@ -5,6 +5,14 @@
 			max-height: 25px !important;
 		}
 		
+		/* 帖子浏览次数位置与评论次数对齐 */
+		@media (min-width: 768px){
+		    .IndexPage li.item-discussion-views {
+		        margin-right: -70px;
+		        width: 55px;
+		    }
+		}
+		
 		/* 显示最新回复插件的图片调整 */
 		.IndexPage .DiscussionList .item-lastpost img {
 			max-height: 40px;
