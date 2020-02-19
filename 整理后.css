@@ -69,7 +69,8 @@
 			.DiscussionPage-nav {
 				position: sticky;
 				top: 60px;
-				}
+				z-index: 1;
+			}
 			.DiscussionPage-nav>ul{
 				position:relative;
 			}
