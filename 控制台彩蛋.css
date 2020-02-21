@@ -1,26 +1,14 @@
 <script>
 var DOSU = {
 	"info":"%c 我们欢迎你！加入我们，和我们一起，为 Linux 的发展尽一份力！ 谢谢。\n" + "\n Email at qingdkj@outlook.com || join QQ team : 942115797",
-	"logo":"\n  く__,.ヘヽ.        /  ,ー､ 〉 " + 
-			"\n           ＼ ', !-─‐-i  /  /´ " + 
-			"\n           ／｀ｰ'       L/／｀ヽ､ " + 
-			"\n         /   ／,   /|   ,   ,       ', " + 
-			"\n       ｲ   / /-‐/  ｉ  L_ ﾊ ヽ!   i " + 
-			"\n        ﾚ ﾍ 7ｲ｀ﾄ   ﾚ'ｧ-ﾄ､!ハ|   | " + 
-			"\n          !,/7 '0'     ´0iソ|    | " + 
-			"\n          |.从`    _     ,,,, / |./    | " + 
-			"\n          ﾚ'| i＞.､,,__  _,.イ /   .i   | " + 
-			"\n            ﾚ'| | / k_７_/ﾚ'ヽ,  ﾊ.  | " + 
-			"\n              | |/i 〈|/   i  ,.ﾍ |  i  | " + 
-			"\n             .|/ /  ｉ：    ﾍ!    ＼  | " + 
-			"\n              kヽ>､ﾊ    _,.ﾍ､    /､! " + 
-			"\n              !'〈//｀Ｔ´', ＼ ｀'7'ｰr' " + 
-			"\n              ﾚ'ヽL__|___i,___,ンﾚ|ノ " + 
-			"\n                  ﾄ-,/  |___./ " + 
-			"\n                  'ｰ'    !_,.: " + 
+	"logo":"\n    _/    _/  _/_/_/  _/_/_/    _/_/_/_/   " + 
+			"\n   _/    _/    _/    _/    _/  _/          " + 
+			"\n  _/_/_/_/    _/    _/_/_/    _/_/_/       " + 
+			"\n _/    _/    _/    _/    _/  _/            " + 
+			"\n_/    _/  _/_/_/  _/    _/  _/_/_/_/     " + 
 			"\n\n"
 }
 
-	console.log(DOSU.logo + DOSU.info, 'color: #66f' );
 	console.log('\n' + ' %c DOSU TEAM' + ' %c http://www.deepinos.org ' + '\n', 'color: #e4f2f6; background: #66f; padding:5px 0;', 'background: #e4f2f6; padding:5px 0;');
+	console.log(DOSU.logo + DOSU.info, 'color: #66f' );
 </script>
