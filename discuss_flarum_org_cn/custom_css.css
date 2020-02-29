@@ -1,0 +1,103 @@
+/* 17年备份 */
+.qrcode{
+    position:fixed;
+    right:20px;
+    bottom:40px;
+    border: 1px solid #DDD;
+    padding: 5px;
+    background: #FFF;
+    text-align: center;
+    border-radius: 2px;
+    z-index: 1000;
+}
+@media (max-width: 991px){
+    .qrcode {
+        display: none !important;
+    }
+}
+.Post-body{
+    font-size: 16px;
+    line-height: 1.6;
+}
+.Post-body a{
+    color: #4078c0;
+    font-weight: normal;
+}
+.upyun{
+  font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  font-size: 16px;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+}
+.upyun img {
+  vertical-align: middle;
+}
+
+/* 标签页表单位移修复 */
+.TagDiscussionModal .Modal-content,
+.TagDiscussionModal .TagsInput{
+    overflow: unset;
+}
+
+/* 替换点赞, 回复按钮 */
+.item-like .Button--link .Button-label,
+.item-reply .Button--link .Button-label{
+    display: none;
+}
+.item-like .Button:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 17px;
+    content: '\f164';
+    margin-right: 4px;
+    vertical-align: -1px;
+}
+.item-reply .Button--link:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    font-size: 17px;
+    content: '\f3e5';
+    margin-right: 4px;
+    vertical-align: -1px;
+}
+
+/* 首页主题点击量对齐 */
+@media (min-width: 768px){
+	.IndexPage li.item-discussion-views {
+		margin-right: -70px;
+		width: 55px;
+	}
+}
+
+/* 隐藏创建用户的第三方登录按钮 */
+.Modal-body .LogInButtons {
+    display: none;
+}
+
+/* 暂时修复 FancyBox 导致的 shield 图标显示异常 */
+.Post img.inline-image {
+    padding: 0;
+    border-radius: 0;
+    max-height: 120px;
+    max-width: 240px;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    pointer-events: none;
+    background: none;
+}
+.Post a.inline-image-link {
+    border: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    background: none;
+}
+.Post a.inline-image-link img{
+	top: 0;
+}
+.Post a.inline-image-link .extlink-badge{
+	display: none;
+}
