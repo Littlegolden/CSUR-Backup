@@ -173,6 +173,7 @@
 			/* 单元格换行显示 */
 			display: block;
 		}
+		li.item-pronouns,
 		li.item-lastSeen,
 		li.item-joined,
 		li.item-fab,
@@ -180,7 +181,7 @@
 		li.item-money,
 		li.social-button,
 		li.item-settings.social-button {
-			/* 上次在线,注册时间,社交链接,一行显示 */
+			/* 人称代词,上次在线,注册时间,社交链接,一行显示 */
 			display: inline-block !important;
 		}
 		
@@ -196,6 +197,85 @@
 		html body {
 			font-family: sans-serif, Roboto, Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, 'System Emoji', "Segoe UI", Ubuntu, Cantarell, Oxygen, Helvetica, 'System SC', 'System Latin';
 		}
+		
+		/* 加载进度条 */
+		.pace {
+		  -webkit-pointer-events: none;
+		  pointer-events: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		  user-select: none;
+		}
+		
+		.pace-inactive {
+		  display: none;
+		}
+		
+		.pace .pace-progress {
+		  background: #29d;
+		  position: fixed;
+		  z-index: 2000;
+		  top: 0;
+		  right: 100%;
+		  width: 100%;
+		  height: 2px;
+		}
+		
+		.pace .pace-progress-inner {
+		  display: block;
+		  position: absolute;
+		  right: 0px;
+		  width: 100px;
+		  height: 100%;
+		  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+		  opacity: 1.0;
+		  -webkit-transform: rotate(3deg) translate(0px, -4px);
+		  -moz-transform: rotate(3deg) translate(0px, -4px);
+		  -ms-transform: rotate(3deg) translate(0px, -4px);
+		  -o-transform: rotate(3deg) translate(0px, -4px);
+		  transform: rotate(3deg) translate(0px, -4px);
+		}
+		
+		.pace .pace-activity {
+		  display: block;
+		  position: fixed;
+		  z-index: 2000;
+		  top: 15px;
+		  right: 15px;
+		  width: 14px;
+		  height: 14px;
+		  border: solid 2px transparent;
+		  border-top-color: #29d;
+		  border-left-color: #29d;
+		  border-radius: 10px;
+		  -webkit-animation: pace-spinner 400ms linear infinite;
+		  -moz-animation: pace-spinner 400ms linear infinite;
+		  -ms-animation: pace-spinner 400ms linear infinite;
+		  -o-animation: pace-spinner 400ms linear infinite;
+		  animation: pace-spinner 400ms linear infinite;
+		}
+		
+		@-webkit-keyframes pace-spinner {
+		  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+		}
+		@-moz-keyframes pace-spinner {
+		  0% { -moz-transform: rotate(0deg); transform: rotate(0deg); }
+		  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+		}
+		@-o-keyframes pace-spinner {
+		  0% { -o-transform: rotate(0deg); transform: rotate(0deg); }
+		  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+		}
+		@-ms-keyframes pace-spinner {
+		  0% { -ms-transform: rotate(0deg); transform: rotate(0deg); }
+		  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+		}
+		@keyframes pace-spinner {
+		  0% { transform: rotate(0deg); transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); transform: rotate(360deg); }
+		}
+
 		
 		/*返回顶部按钮 开始*/
 		.scroll-up {
@@ -331,8 +411,9 @@
 				}
 			}
 		
-			/* 手机端，在会员名录隐藏发送全体邮件按钮，首页加载更多按钮默认宽度 */
-			.IndexPage-toolbar-action li.item-kilowhat-mailing {
+			/* 手机端, 在会员名录隐藏发送全体邮件按钮, 隐藏最近浏览帖子的人, 首页加载更多按钮默认宽度 */
+			.IndexPage-toolbar-action li.item-kilowhat-mailing,
+			li.item-lastDiscussionViewers{
 				display: none;
 			}
 		

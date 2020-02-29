@@ -1,0 +1,59 @@
+/* 卡片主题 */
+	/* 首页 */
+		@media (min-width: 768px){
+			body{ /* 背景 */
+				/*! background-color: #8f1919; */
+				background-image: radial-gradient(circle at 100% 150%, #f8f8f8 24%, #fff 24%, #fff 28%, #f8f8f8 28%, #f8f8f8 36%, #fff 36%, #fff 40%, transparent 40%, transparent),radial-gradient(circle at 0 150%, #f8f8f8 24%, #fff 24%, #fff 28%, #f8f8f8 28%, #f8f8f8 36%, #fff 36%, #fff 40%, transparent 40%, transparent),radial-gradient(circle at 50% 100%, #fff 10%, #f8f8f8 10%, #f8f8f8 23%, #fff 23%, #fff 30%, #f8f8f8 30%, #f8f8f8 43%, #fff 43%, #fff 50%, #f8f8f8 50%, #f8f8f8 63%, #fff 63%, #fff 71%, transparent 71%, transparent),radial-gradient(circle at 100% 50%, #fff 5%, #f8f8f8 5%, #f8f8f8 15%, #fff 15%, #fff 20%, #f8f8f8 20%, #f8f8f8 29%, #fff 29%, #fff 34%, #f8f8f8 34%, #f8f8f8 44%, #fff 44%, #fff 49%, transparent 49%, transparent),radial-gradient(circle at 0 50%, #fff 5%, #f8f8f8 5%, #f8f8f8 15%, #fff 15%, #fff 20%, #f8f8f8 20%, #f8f8f8 29%, #fff 29%, #fff 34%, #f8f8f8 34%, #f8f8f8 44%, #fff 44%, #fff 49%, transparent 49%, transparent);
+				background-size: 100px 50px;
+			}
+			
+			.DiscussionListItem {/* 卡片 */
+				background: #fff;
+			  border-radius: 8px;
+				margin: auto 0;
+			  margin-top: 20px;
+				padding: 10px 25px;
+			  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+				transition: all 0.2s;
+			}
+			
+			.DiscussionList-discussions>li:not(:first-child) .DiscussionListItem:hover{ /* 悬浮效果 */
+				scale: 1.01;
+				background-color: white;
+				box-shadow: 0px 5px 10px 0px #999;
+			}
+			
+			.DiscussionList-discussions>li:first-child .DiscussionListItem:hover{
+				background-color: white;
+				box-shadow: 0px 5px 10px 0px #999;
+			}
+			
+				/* 标签栏,在线用户 */
+			.sideNav .Dropdown--select,/* 标签栏 */
+			.UserPage .sideNavOffset,/* 用户页侧边栏 */
+			.item-onlineUsers,/* 在线用户 */
+			li.item-forumStatisticsWidget,/* 统计 */
+			fieldset.LastUsers,/*  */
+			.LastUsers legend{ /*  */
+				display: block;
+				background: #fff;
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+				box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+				border-radius: 6px;
+			}
+			
+			.item-SUEButton .Button.Button--primary.KvotheSub, /* 替换的注册按钮 */
+			.IndexPage-nav .item-newDiscussion .Button, /* 发帖按钮 */
+			.IndexPage-toolbar .Button, /* 排序按钮 */
+			.DiscussionList-loadMore .Button, /* 加载更多 */
+			.IndexPage .SubscriptionMenu, /* 标签订阅 */
+			.sideads .Alert
+			{
+				box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+			}
+			
+			
+		}
