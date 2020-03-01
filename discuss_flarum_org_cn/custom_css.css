@@ -15,10 +15,6 @@
         display: none !important;
     }
 }
-.Post-body a{
-    color: #4078c0;
-    font-weight: normal;
-}
 .upyun{
   font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
   font-size: 16px;
@@ -44,18 +40,17 @@
 .item-like .Button:before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
-    font-size: 17px;
+    font-size: 14px;
     content: '\f164';
-    margin-right: 4px;
     vertical-align: -1px;
 }
 .item-reply .Button--link:before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 600;
-    font-size: 17px;
+    font-size: 15px;
     content: '\f3e5';
     margin-right: 4px;
-    vertical-align: -1px;
+    vertical-align: -2px;
 }
 
 /* 首页主题点击量对齐 */
@@ -72,7 +67,7 @@
 }
 
 /* 暂时修复 FancyBox 导致的 shield 图标显示异常 */
-.Post img.inline-image {
+.PostStream .Post img.inline-image {
     padding: 0;
     border-radius: 0;
     max-height: 120px;
@@ -83,17 +78,32 @@
     pointer-events: none;
     background: none;
 }
-.Post a.inline-image-link {
-    border: none;
+.PostStream .Post a.inline-image-link,
+.PostStream .Post a.block-image-link{
+    border-bottom: 1px solid #e7edf3;
     padding: 0;
     margin-left: 0;
     margin-right: 0;
     border-radius: 0;
     background: none;
+	display: inline-block;
 }
-.Post a.inline-image-link img{
+.PostStream .Post a.inline-image-link:hover,
+.PostStream .Post a.block-image-link:hover{
+	border-color: #f36322;
+}
+.PostStream .Post a.inline-image-link img{
 	top: 0;
 }
-.Post a.inline-image-link .extlink-badge{
+.PostStream .Post a.inline-image-link .extlink-badge,
+.PostStream .Post a.block-image-link .extlink-badge{
 	display: none;
+}
+.PostStream .Post a.block-image-link img{
+	width: auto;
+	margin-bottom: 6px;
+}
+/* 反应按钮位置 */
+.Post-actions .Reactions .Reactions--ShowReactions {
+    margin-top: 11px;
 }
