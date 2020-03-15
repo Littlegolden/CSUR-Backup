@@ -74,7 +74,7 @@
 			.DiscussionPage-nav>ul{
 				position:relative;
 			}
-			.Post { /* 防止影响一楼的高度 */ 	
+			.DiscussionPage .Post { /* 防止影响一楼的高度 */ 	
 			    display: flow-root;
 			}
 		}
@@ -125,16 +125,6 @@
 			width: auto;
 		}
 		
-		/* 增加Steam风格黑幕 */
-		.steam_spoiler {
-			color: #000000;
-			background-color: #000000;
-			padding: 0px 8px;
-		}
-		.steam_spoiler:hover {
-			color: #FFF;
-		}
-		
 		
 		/* 信息流广告宽度限制 */
 		.Flagrow-Ads-fake-poststream-item {
@@ -148,7 +138,6 @@
 		.TagsPage .item-forumStatisticsWidget {
 			display: none !important;
 		}
-		
 		
 	
 	/* 会员名录页优化 ↓ */
@@ -276,61 +265,6 @@
 		  100% { transform: rotate(360deg); transform: rotate(360deg); }
 		}
 
-		
-		/*返回顶部按钮 开始*/
-		.scroll-up {
-			background-color: #f8504b;
-			/*初始颜色*/
-			color: #ffffff;
-			/*文字白色*/
-			transition: transform 0.5s;
-			/*设置效果出现、消失过渡时间*/
-		}
-		.scroll-up:hover,
-		.scroll-up:focus {
-			/*悬浮、点击样式*/
-			background-color: #f8504b;
-			color: #ffffff;
-			transform: scale(1.1, 1.1);
-			/*缩放*/
-			transition: all 100ms;
-			/*动画过渡*/
-		}
-		.scroll-up {
-			border-radius: 50px;
-			/*圆角*/
-			bottom: 70px;
-			/*距离网页底部*/
-			padding: 3px;
-			display: none;
-			height: 50px;
-			/*圆高度*/
-			opacity: 1;
-			position: fixed;
-			right: 10px;
-			/*距离网页右边*/
-			text-align: center;
-			/*文本居中*/
-			width: 50px;
-			/*圆宽度*/
-			overflow: hidden;
-			/*属性规定当内容溢出元素框时，修剪多余内容*/
-			z-index: 9999;
-			/*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
-			line-height: 2.5;
-			color: #ffffff;
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .3);
-		}
-		@media (max-width: 992px) {
-			.scroll-up {
-				bottom: 60px;
-				right: 10px;
-				width: 40px;
-				height: 40px;
-			}
-		}
-		/*返回顶部结束*/
-
 		/* 隐藏文本编辑器 MD 图片按钮 */
 		#MarkdownToolbar button[title="Add an image"],
 		#MarkdownToolbar button[title="图片"],
@@ -338,12 +272,13 @@
 		#MarkdownToolbar button[title="画像を追加"] {
 			display: none;
 		}
-
-		/* 隐藏文本编辑器原生 emoji 选择器 */
-		.TextEditor-toolbar button[data-original-title="表情"],
-		.TextEditor-toolbar button[data-original-title="插入表情符號"],
-		.TextEditor-toolbar button[data-original-title="Insert emoji"] {
-			display: none;
+		
+		/* 标签页表单位移修复 */
+		@media (min-width: 992px){
+		    .TagDiscussionModal .Modal-content,
+		    .TagDiscussionModal .TagsInput{
+		        overflow: unset;
+		    }
 		}
 
 		/* 菜单栏 LOGO 左侧通知按钮 */
@@ -417,8 +352,9 @@
 				display: none;
 			}
 		
-			.DiscussionList-loadMore .Button {
-				width: auto;
+			.DiscussionList-loadMore {
+				padding-left: 15px;
+				padding-right: 15px;
 			}
 		}
 		/* mobile */
@@ -449,75 +385,6 @@
 		
 			nav.IndexPage-nav.sideNav {
 				overflow-y: hidden;
-			}
-		}
-		/* 手机端底部导航栏 */
-		.DiscussionList:not(.DiscussionList--searchResults) .read .DiscussionListItem-title {
-			color: #000 !important;
-		}
-		.ComposerBody-header h3 {
-			margin: 0;
-			line-height: 1.5em;
-			color: #000 !important;
-		}
-		.PollOption-active {
-			background-color: #49b4e6 !important;
-		}
-		@media(max-width: 500px) {
-			.mobile-app-icon-bar {
-				display: -webkit-flex;
-				display: -ms-flexbox;
-				display: flex;
-				-webkit-align-items: center;
-				-ms-flex-align: center;
-				align-items: center;
-				-webkit-justify-content: space-around;
-				-ms-flex-pack: distribute;
-				justify-content: space-around;
-				background: none;
-				position: sticky;
-				bottom: 0;
-				width: 100%;
-				height: 48px;
-				z-index: 2;
-				/*border: 1px solid #fff !important;*/
-			}
-			/* addthis 上移 */
-			.at-expanding-share-button[data-position=bottom-right] {
-				bottom: 58px !important;
-			}
-			.scroll-up {
-				bottom: 108px;
-			}
-		}
-		.buttonstyle.active {
-			color: #fff !important;
-		}
-		.buttonstyle {
-			width: 100%;
-			height: 100%;
-			display: block;
-			flex-direction: column;
-			align-items: center;
-			background: @config-primary-color;
-			color: #ffffff;
-			border: none;
-			margin-top: 4px;
-		}
-		.spanstyle {
-			font-size: 10px;
-			margin-top: 5px;
-		}
-		.mobile-app-icon-bar button {
-			padding: 0.75rem !important;
-			cursor: pointer;
-		}
-		.mobile-app-icon-bar button svg,
-		.mobile-app-icon-bar button i,
-		.mobile-app-icon-bar button img {}
-		@media(min-width: 800px) {
-			.mobile-app-icon-bar {
-				display: none !important;
 			}
 		}
 	

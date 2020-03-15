@@ -26,11 +26,46 @@
   vertical-align: middle;
 }
 
-/* 标签页表单位移修复 */
-.TagDiscussionModal .Modal-content,
-.TagDiscussionModal .TagsInput{
-    overflow: unset;
+/* 导航栏位置调整 */
+@media (max-width: 1120px) and (min-width: 768px){
+	.App-header .container {
+		width: auto;
+	}
 }
+@media (max-width: 1051px) and (min-width: 991px){
+	.Header-controls .Search:not(.focused) .Search-input{
+		max-width: 166px;
+		-webkit-transition: all .4s;
+		-o-transition: all .4s;
+		transition: all .4s;
+	}
+}
+
+/* 标签页表单位移修复 */
+@media (min-width: 992px){
+    .TagDiscussionModal .Modal-content,
+    .TagDiscussionModal .TagsInput{
+        overflow: unset;
+    }
+}
+/* 会员名录页, 首页加载更多按钮尺寸 */
+.UserDirectoryList-loadMore .Button,
+.DiscussionList-loadMore .Button {
+	 width: 50%;
+         border-radius: 30px;
+         margin-top: 30px;
+}
+.UserDirectoryList-loadMore {
+    text-align: center;
+}
+@media (max-width: 767px) {
+	.DiscussionList-loadMore {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+
 
 /* 替换点赞, 回复按钮 */
 .item-like .Button--link .Button-label,
@@ -67,7 +102,7 @@
 }
 
 /* 暂时修复 FancyBox 导致的 shield 图标显示异常 */
-.PostStream .Post img.inline-image {
+.CommentPost.Post img.inline-image {
     padding: 0;
     border-radius: 0;
     max-height: 120px;
@@ -75,11 +110,11 @@
     width: auto;
     margin-left: 0;
     margin-right: 0;
-    pointer-events: none;
+    /*pointer-events: none;*/
     background: none;
 }
-.PostStream .Post a.inline-image-link,
-.PostStream .Post a.block-image-link{
+.CommentPost.Post a.inline-image-link,
+.CommentPost.Post a.block-image-link{
     border-bottom: 1px solid #e7edf3;
     padding: 0;
     margin-left: 0;
@@ -88,22 +123,125 @@
     background: none;
 	display: inline-block;
 }
-.PostStream .Post a.inline-image-link:hover,
-.PostStream .Post a.block-image-link:hover{
+.CommentPost.Post a.inline-image-link:hover,
+.CommentPost.Post a.block-image-link:hover{
 	border-color: #f36322;
 }
-.PostStream .Post a.inline-image-link img{
+.CommentPost.Post a.inline-image-link img{
 	top: 0;
 }
-.PostStream .Post a.inline-image-link .extlink-badge,
-.PostStream .Post a.block-image-link .extlink-badge{
+.CommentPost.Post a.inline-image-link .extlink-badge,
+.CommentPost.Post a.block-image-link .extlink-badge{
 	display: none;
 }
-.PostStream .Post a.block-image-link img{
+.CommentPost.Post a.block-image-link img{
 	width: auto;
 	margin-bottom: 6px;
 }
 /* 反应按钮位置 */
 .Post-actions .Reactions .Reactions--ShowReactions {
     margin-top: 11px;
+}
+/* 表格阴影去除 */
+.Post .Post-body table{
+	box-shadow: none;
+}
+.IndexPage .DiscussionListItem,
+.UserPage .DiscussionListItem,
+.DiscussionPage-discussion .DiscussionListItem{
+    transition: all 0.1s;
+}
+.IndexPage .DiscussionList-discussions>li:not(:first-child) .DiscussionListItem:hover{ /* 悬浮效果 */
+    transform: scale(1.01);
+}
+@media (min-width: 768px){
+.IndexPage .DiscussionListItem-content,
+.UserPage .DiscussionListItem-content,
+.DiscussionPage-discussion .DiscussionListItem-content{
+padding-left: 80px;
+padding-right: 80px;
+padding-top: 10px;
+border-radius: 8px;
+padding-bottom: 10px;
+border:1px solid #dbdfe6!important;}
+
+.IndexPage .Post.CommentPost,
+.UserPage .Post.CommentPost,
+.DiscussionPage-discussion .Post.CommentPost {
+    margin-top:20px;
+    border-radius: 8px;
+    border: 1px solid #dbdfe6 !important;
+}
+
+.IndexPage .DiscussionListItem-info>.item-tags, .UserPage .DiscussionListItem-info>.item-tags {top: 23px !important;}
+.DiscussionListItem {
+position: relative;
+margin-right: 0;
+padding-right: 0;
+padding-left: 0;
+margin-left: 0;
+border-radius: 8px;
+margin-top:15px;}}
+
+@media (min-width: 768px){
+.IndexPage .DiscussionListItem:hover {
+background-color: #fff;
+-webkit-box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;
+box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;}}
+
+.WelcomeHero{color: #282828;}
+.Hero h2 { font-size: 25px; font-weight: 700;}
+.Hero { box-shadow: 0px 1px 10px 0 rgba(151,158,181,0.28); background-color: #fff; margin-bottom: 15px;}
+/*.DiscussionHero .TagsLabel .TagLabel { color: #4D698E; }*/
+.WelcomeHero .Hero-subtitle {color: #000;}
+
+.unread .DiscussionListItem-title:after {
+font-family: "Font Awesome 5 Free";
+font-weight: 600;
+content: "\f111";
+color: #667c99;
+margin-left: 2px ;
+margin-top:-6px;
+transform: scale(0.5);
+position:absolute;}
+
+.UserDirectoryList .UserCard--directory {
+    box-shadow: 0 2px 6px transparent!important;
+    background-color: transparent!important;
+    border: 2px solid rgba(0,0,0,.1);
+    margin-bottom: 15px!important;
+    border-radius: 6px!important;
+}
+.UserCard, .UserCard a {
+    color: #40444a;
+}
+.UserCard {
+    background: #e8ecf3;
+    background-size: 100% 100%;
+}
+.darkenBackground {
+    background: #fff;
+    border-radius: 6px!important;
+}
+.Badge--social {
+    color: #4d698e!important;
+}
+.Search-input input {
+    border-radius: 30px;
+}
+
+ul.IndexPage-toolbar-action>li:not(:first-child) {
+    margin-top: 5px;
+}
+.IndexPage-toolbar-action {
+    margin-left: 15px;
+}
+.UserCard.UserCard--popover,
+.UserCard.Hero.UserHero {
+    background: none !important;
+}
+
+.UserCard .Button {
+    color: #667c99;
+    background: rgba(0,0,0,.1);
 }
