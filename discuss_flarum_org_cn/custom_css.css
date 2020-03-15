@@ -1,200 +1,159 @@
+/*补充Iconfont*/
+i.icon.fas.fa-lms:before {
+    content: "";
+    background: url(https://bbs.kuoxo.com/assets/files/2020-03-11/1583914724-614097-1.svg);
+    position: relative;;
+    display: block;
+    width: 32px;
+    height: 32px;
+    top: -5px;
+    left: -4px;
+}
+
+
 /* 17年备份 */
-.qrcode{
-    position:fixed;
-    right:20px;
-    bottom:40px;
-    border: 1px solid #DDD;
-    padding: 5px;
-    background: #FFF;
-    text-align: center;
-    border-radius: 2px;
-    z-index: 1000;
+.qrcode {
+	position:fixed;
+	right:20px;
+	bottom:40px;
+	border:1px solid #DDD;
+	padding:5px;
+	background:#FFF;
+	text-align:center;
+	border-radius:2px;
+	z-index:1000;
 }
-@media (max-width: 991px){
-    .qrcode {
-        display: none !important;
-    }
+@media (max-width:991px) {
+	.qrcode {
+	display:none !important;
 }
-.upyun{
-  font-family: -apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
-  font-size: 16px;
-  text-align: center;
-  height: 45px;
-  line-height: 45px;
+}.upyun {
+	font-family:-apple-system,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	font-size:16px;
+	text-align:center;
+	height:45px;
+	line-height:45px;
 }
 .upyun img {
-  vertical-align: middle;
+	vertical-align:middle;
 }
-
 /* 导航栏位置调整 */
-@media (max-width: 1120px) and (min-width: 768px){
+@media (max-width:1120px) and (min-width:768px) {
 	.App-header .container {
-		width: auto;
-	}
+	width:auto;
 }
-@media (max-width: 1051px) and (min-width: 991px){
-	.Header-controls .Search:not(.focused) .Search-input{
-		max-width: 166px;
-		-webkit-transition: all .4s;
-		-o-transition: all .4s;
-		transition: all .4s;
-	}
+}@media (max-width:1051px) and (min-width:991px) {
+	.Header-controls .Search:not(.focused) .Search-input {
+	max-width:166px;
+	-webkit-transition:all .4s;
+	-o-transition:all .4s;
+	transition:all .4s;
 }
-
-/* 标签页表单位移修复 */
-@media (min-width: 992px){
-    .TagDiscussionModal .Modal-content,
-    .TagDiscussionModal .TagsInput{
-        overflow: unset;
+}/* 标签页表单位移修复 */
+@media (min-width:768px) {
+	.TagDiscussionModal .Modal-content,.TagDiscussionModal .TagsInput {
+	    overflow:unset;
+        }
+}
+@media(max-width:767px){
+    .TagsInput input{
+        width:0% !important;
     }
 }
-/* 会员名录页, 首页加载更多按钮尺寸 */
-.UserDirectoryList-loadMore .Button,
-.DiscussionList-loadMore .Button {
-	 width: 50%;
-         border-radius: 30px;
-         margin-top: 30px;
+/* 会员名录页,首页加载更多按钮尺寸 */
+.UserDirectoryList-loadMore .Button,.DiscussionList-loadMore .Button {
+	width:50%;
+	border-radius:30px;
+	margin-top:30px;
 }
 .UserDirectoryList-loadMore {
-    text-align: center;
+	text-align:center;
 }
-@media (max-width: 767px) {
+@media (max-width:767px) {
 	.DiscussionList-loadMore {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
+	padding-left:15px;
+	padding-right:15px;
+        }
 }
-
-
-
-/* 替换点赞, 回复按钮 */
-.item-like .Button--link .Button-label,
-.item-reply .Button--link .Button-label{
-    display: none;
+/* 替换点赞,回复按钮 */
+.item-like .Button--link .Button-label,.item-reply .Button--link .Button-label {
+	display:none;
 }
 .item-like .Button:before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 600;
-    font-size: 14px;
-    content: '\f164';
-    vertical-align: -1px;
+	font-family:'Font Awesome 5 Free';
+	font-weight:600;
+	font-size:14px;
+	content:'\f164';
+	vertical-align:-1px;
 }
 .item-reply .Button--link:before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 600;
-    font-size: 15px;
-    content: '\f3e5';
-    margin-right: 4px;
-    vertical-align: -2px;
+	font-family:'Font Awesome 5 Free';
+	font-weight:600;
+	font-size:15px;
+	content:'\f3e5';
+	margin-right:4px;
+	vertical-align:-2px;
 }
-
 /* 首页主题点击量对齐 */
-@media (min-width: 768px){
+@media (min-width:768px) {
 	.IndexPage li.item-discussion-views {
-		margin-right: -70px;
-		width: 55px;
-	}
+	margin-right:-70px;
+	width:55px;
 }
-
-/* 隐藏创建用户的第三方登录按钮 */
-.Modal-body .LogInButtons {
-    display: none;
 }
-
 /* 暂时修复 FancyBox 导致的 shield 图标显示异常 */
 .CommentPost.Post img.inline-image {
-    padding: 0;
-    border-radius: 0;
-    max-height: 120px;
-    max-width: 240px;
-    width: auto;
-    margin-left: 0;
-    margin-right: 0;
-    /*pointer-events: none;*/
-    background: none;
+	padding:0;
+	border-radius:0;
+	max-height:120px;
+	max-width:240px;
+	width:auto;
+	margin-left:0;
+	margin-right:0;
+	/*pointer-events:none;
+	*/
+    background:none;
 }
-.CommentPost.Post a.inline-image-link,
-.CommentPost.Post a.block-image-link{
-    border-bottom: 1px solid #e7edf3;
-    padding: 0;
-    margin-left: 0;
-    margin-right: 0;
-    border-radius: 0;
-    background: none;
-	display: inline-block;
+.CommentPost.Post a.inline-image-link,.CommentPost.Post a.block-image-link {
+	border-bottom:1px solid #e7edf3;
+	padding:0;
+	margin-left:0;
+	margin-right:0;
+	border-radius:0;
+	background:none;
+	display:inline-block;
 }
-.CommentPost.Post a.inline-image-link:hover,
-.CommentPost.Post a.block-image-link:hover{
-	border-color: #f36322;
+.CommentPost.Post a.inline-image-link:hover,.CommentPost.Post a.block-image-link:hover {
+	border-color:#f36322;
 }
-.CommentPost.Post a.inline-image-link img{
-	top: 0;
+.CommentPost.Post a.inline-image-link img {
+	top:0;
 }
-.CommentPost.Post a.inline-image-link .extlink-badge,
-.CommentPost.Post a.block-image-link .extlink-badge{
-	display: none;
+.CommentPost.Post a.inline-image-link .extlink-badge,.CommentPost.Post a.block-image-link .extlink-badge {
+	display:none;
 }
-.CommentPost.Post a.block-image-link img{
-	width: auto;
-	margin-bottom: 6px;
+.CommentPost.Post a.block-image-link img {
+	width:auto;
+	margin-bottom:6px;
 }
 /* 反应按钮位置 */
 .Post-actions .Reactions .Reactions--ShowReactions {
-    margin-top: 11px;
+	margin-top:11px;
 }
 /* 表格阴影去除 */
-.Post .Post-body table{
-	box-shadow: none;
+.Post .Post-body table {
+	box-shadow:none;
 }
-.IndexPage .DiscussionListItem,
-.UserPage .DiscussionListItem,
-.DiscussionPage-discussion .DiscussionListItem{
-    transition: all 0.1s;
-}
-.IndexPage .DiscussionList-discussions>li:not(:first-child) .DiscussionListItem:hover{ /* 悬浮效果 */
-    transform: scale(1.01);
-}
-@media (min-width: 768px){
-.IndexPage .DiscussionListItem-content,
-.UserPage .DiscussionListItem-content,
-.DiscussionPage-discussion .DiscussionListItem-content{
-padding-left: 80px;
-padding-right: 80px;
-padding-top: 10px;
-border-radius: 8px;
-padding-bottom: 10px;
-border:1px solid #dbdfe6!important;}
-
-.IndexPage .Post.CommentPost,
-.UserPage .Post.CommentPost,
-.DiscussionPage-discussion .Post.CommentPost {
-    margin-top:20px;
-    border-radius: 8px;
-    border: 1px solid #dbdfe6 !important;
+.IndexPage .DiscussionListItem,.UserPage .DiscussionListItem,.DiscussionPage-discussion .DiscussionListItem {
+	transition:all 0.1s;
 }
 
-.IndexPage .DiscussionListItem-info>.item-tags, .UserPage .DiscussionListItem-info>.item-tags {top: 23px !important;}
-.DiscussionListItem {
-position: relative;
-margin-right: 0;
-padding-right: 0;
-padding-left: 0;
-margin-left: 0;
-border-radius: 8px;
-margin-top:15px;}}
-
-@media (min-width: 768px){
-.IndexPage .DiscussionListItem:hover {
-background-color: #fff;
--webkit-box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;
-box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;}}
-
-.WelcomeHero{color: #282828;}
-.Hero h2 { font-size: 25px; font-weight: 700;}
-.Hero { box-shadow: 0px 1px 10px 0 rgba(151,158,181,0.28); background-color: #fff; margin-bottom: 15px;}
-/*.DiscussionHero .TagsLabel .TagLabel { color: #4D698E; }*/
-.WelcomeHero .Hero-subtitle {color: #000;}
-
+/* 2020-3-7 */
+/* 私人讨论成员名颜色 */
+.Hero span.RecipientLabel-text {
+    color: @config-primary-color;
+}
+/* 未读 */
 .unread .DiscussionListItem-title:after {
 font-family: "Font Awesome 5 Free";
 font-weight: 600;
@@ -204,44 +163,190 @@ margin-left: 2px ;
 margin-top:-6px;
 transform: scale(0.5);
 position:absolute;}
-
-.UserDirectoryList .UserCard--directory {
-    box-shadow: 0 2px 6px transparent!important;
-    background-color: transparent!important;
-    border: 2px solid rgba(0,0,0,.1);
-    margin-bottom: 15px!important;
-    border-radius: 6px!important;
-}
-.UserCard, .UserCard a {
-    color: #40444a;
-}
-.UserCard {
-    background: #e8ecf3;
-    background-size: 100% 100%;
-}
-.darkenBackground {
-    background: #fff;
-    border-radius: 6px!important;
-}
-.Badge--social {
-    color: #4d698e!important;
-}
-.Search-input input {
-    border-radius: 30px;
+.PostsUserPage .PostsUserPage-list .Post{
+    padding-top:20px;
 }
 
-ul.IndexPage-toolbar-action>li:not(:first-child) {
-    margin-top: 5px;
+/* Yannis 风格调整 2020-3-5*/
+@media (min-width:769px) {
+	body {
+	background-image:linear-gradient(to bottom,#f2f2f2,#ebebeb);
+	background-repeat:no-repeat;
 }
-.IndexPage-toolbar-action {
-    margin-left: 15px;
+.IndexPage h3.DiscussionListItem-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
-.UserCard.UserCard--popover,
+.App {
+    overflow: hidden;
+}
+.DiscussionHero .TagsLabel .TagLabel {
+    color: #4d698e;
+    font-size: 16px!important;
+}
+h3.DiscussionListItem-title {
+    padding-bottom: 3px;
+}
+
 .UserCard.Hero.UserHero {
-    background: none !important;
+    background: #79a3dc!important;
 }
-
-.UserCard .Button {
-    color: #667c99;
-    background: rgba(0,0,0,.1);
+.DiscussionListItem {
+	margin-top:10px;
 }
+.DiscussionListItem-info {
+    color: #888;
+}
+.EventPost-icon {
+	text-align:center;
+	margin-left:-19px;
+	width:64px;
+	font-size:22px;
+}
+.DiscussionListItem:hover {
+	background:#f7f7f7;
+}
+.DiscussionList:not(.DiscussionList--searchResults) .read .DiscussionListItem-title {
+	color:#1b2028;
+}
+.scroll-up {
+	padding:9px!important;
+}
+.DiscussionHero .TagsLabel .TagLabel.colored .TagLabel-text {
+	color:inherit !important;
+	font-size:16px;
+}
+.Scrubber-handle {
+	background-color:transparent!important;
+}
+kuoxo.com {
+	author:yannisme;
+}
+.Hero {
+	background:#fff !important;
+	margin-bottom:15px;
+}
+.Hero h2 {
+	font-size:2em;
+	font-weight:bolder;
+	color:#191919;
+}
+.Hero-subtitle {
+	color:#000;
+	font-size:15px;
+	margin:8px 0 0;
+	line-height:1.5em;
+}
+.App-header .Button,.App-header .Button:hover {
+	color:#ffffff;
+}
+.UserPage .Hero h2 {
+	color:#ffffff;
+}
+.Post-body {
+	font-size:14px;
+	line-height:1.7;
+	position:relative;
+	overflow:auto;
+	overflow-wrap:break-word;
+	border-radius:5px;
+	margin-top:0;
+        border: 1px solid #d6d6d6;
+	box-shadow:0 3px 9px 1px rgba(0,0,0,0.1) !important;
+	background:#fff;
+	padding:20px;
+	min-height:80px;
+}
+.Post-body>*:first-child,.Post-preview>*:first-child {
+	margin-top:0 !important;
+	/*margin-bottom:0;*/
+}
+.Post-actions {
+	margin-top:5px;
+}
+.Post-footer {
+	margin-top:10px;
+	margin-bottom:0;
+}
+.Post-header {
+	margin-bottom:10px;
+	color:#808080;
+}
+.PostStream-timeGap {
+	padding-top:0;
+	padding-bottom:0;
+}
+.Select-caret {
+	margin-left:5px;
+}
+.Post {
+	padding-bottom:10px;
+}
+.PostStream-timeGap span {
+	margin-top:-10px;
+	position:absolute;
+}
+.UserPage .Post-body {
+	box-shadow:none!important;
+}
+.tooltip.right {
+	margin-left:-29px;
+	margin-top:-18px;
+	padding:0;
+}}
+/* Yannis 其他调整 2020-3-5*/
+::-webkit-scrollbar {
+	/*滚动条整体样式*/
+        width:5px;
+	/*高宽分别对应横竖滚动条的尺寸*/
+        height:5px;
+}
+::-webkit-scrollbar-thumb {
+	/*滚动条里面小方块#4D698E*/
+    background:@config-primary-color;
+}
+::-webkit-scrollbar-track {
+	/*滚动条里面轨道#e8ecf3*/
+        background:#e8ecf3;
+}
+.UserDirectoryList-loadMore .Button,.DiscussionList-loadMore .Button {
+	background:#e0e0e0;
+	color:#828282;
+}
+.Post-body blockquote {
+	border:2px dotted #667c99;
+}
+.Post-body pre {
+	border:2px dotted #a7a7a7;
+}
+i.icon.fas.fa-check.Button-icon {
+    color: @config-primary-color;
+}
+.aaalert.aaerror .aainner {
+	border:2px dotted #b94a48!important;
+	text-align:left;
+}
+.aaalert.aasuccess .aainner {
+	background-color:#dff0d8;
+	border:2px dotted #468847!important;
+	text-align:left;
+}
+.aaalert.aainfo .aainner {
+	border:2px dotted #3a87ad!important;
+	text-align:left;
+}
+.Avatar {
+    border-radius: 20% !important;
+}
+.App-header .Button:active, .App-header .Button.active, .App-header .Button:focus, .App-header .Button.focus, .App-header .open>.Dropdown-toggle.Button,.ButtonGroup>.Button:hover,.App-header .Button:active , .open>.Button.Dropdown-toggle{
+    border-radius: 10% !important;
+}
+.DiscussionPage-nav .ButtonGroup>.Button:hover{
+    border-radius: 4px !important;
+}
+@media (max-width: 767px){
+.KvotheSub {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}}
