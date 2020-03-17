@@ -166,6 +166,12 @@ position:absolute;}
 .PostsUserPage .PostsUserPage-list .Post{
     padding-top:20px;
 }
+/* 图片大小调整 */
+img.block-image {
+    max-width: 200px;
+    min-width: auto;
+}
+
 
 /* Yannis 风格调整 2020-3-5*/
 @media (min-width:769px) {
@@ -339,11 +345,16 @@ i.icon.fas.fa-check.Button-icon {
 .Avatar {
     border-radius: 20% !important;
 }
-.App-header .Button:active, .App-header .Button.active, .App-header .Button:focus, .App-header .Button.focus, .App-header .open>.Dropdown-toggle.Button,.ButtonGroup>.Button:hover,.App-header .Button:active , .open>.Button.Dropdown-toggle{
+.App-header .Button:active,
+.App-header .Button.active,
+.App-header .Button:focus,
+.App-header .Button.focus,
+.App-header .open>.Dropdown-toggle.Button,
+.ButtonGroup>.Dropdown-toggle:hover,
+.App-header .Button:hover,
+.App-header .Button:active,
+.open>.Button.Dropdown-toggle{
     border-radius: 10% !important;
-}
-.DiscussionPage-nav .ButtonGroup>.Button:hover{
-    border-radius: 4px !important;
 }
 @media (max-width: 767px){
 .KvotheSub {
