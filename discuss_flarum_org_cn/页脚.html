@@ -1,0 +1,29 @@
+<style> .IndexPage .DiscussionListItem-info>.item-tags,.UserPage .DiscussionListItem-info>.item-tags{margin-right: 0; position: inherit; padding-right: 10px } .IndexPage .DiscussionListItem-info>.item-tags,.UserPage .DiscussionListItem-info>.item-tags { transition: none; -webkit-mask-image: none }</style>
+
+<script>
+document.addEventListener('click', event => {
+let t = event.target;
+if (t.matches('.Post-body a[target="_blank"]')) {
+let url = new URL(t.href);
+if (url.origin == document.location.origin) {
+t.removeAttribute('target');
+t.removeAttribute('rel');
+}
+}
+}, false);
+</script>
+
+        <script>
+			(function(){
+			    var bp = document.createElement('script');
+			    var curProtocol = window.location.protocol.split(':')[0];
+			    if (curProtocol === 'https') {
+			        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			    }
+			    else {
+			        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			    }
+			    var s = document.getElementsByTagName("script")[0];
+			    s.parentNode.insertBefore(bp, s);
+			})();
+	   </script>

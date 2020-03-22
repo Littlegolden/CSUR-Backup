@@ -37,6 +37,32 @@ i.icon.fas.fa-lms:before {
 .upyun img {
 	vertical-align:middle;
 }
+/* 横幅 */
+.Hero-close {
+    display: none;
+}
+/* 固定左侧标签栏 */
+@media (min-width: 992px) {
+	.sideNav,
+	.sideNav>ul{
+		width: 190px;
+		position: sticky;
+		top: 80px;
+	}
+	.App {
+		overflow-x: visible;
+	}
+	/* 版块页不受影响 */
+	.CategoriesPage.TagsPage .sideNav,
+	.CategoriesPage.TagsPage .sideNav>ul{
+		position: unset;
+	}
+	/* 标签页不受影响 */
+	.TagsPage.TagsPage .sideNav,
+	.TagsPage.TagsPage .sideNav>ul{
+		position: unset;
+	}
+}
 /* 导航栏位置调整 */
 @media (max-width:1120px) and (min-width:768px) {
 	.App-header .container {
@@ -60,6 +86,16 @@ i.icon.fas.fa-lms:before {
         width:0% !important;
     }
 }
+/* 编辑器标题位置 */
+.ComposerBody-content .ComposerBody-header h3 input {
+    width: 470px;
+}
+/* 许可证 */
+li.item-littlegolden-post-license {
+    margin-left: 10px;
+    & .Form-group>label {display: none;}
+}
+
 /* 会员名录页,首页加载更多按钮尺寸 */
 .UserDirectoryList-loadMore .Button,.DiscussionList-loadMore .Button {
 	width:50%;
@@ -105,8 +141,6 @@ i.icon.fas.fa-lms:before {
 .CommentPost.Post img.inline-image {
 	padding:0;
 	border-radius:0;
-	max-height:120px;
-	max-width:240px;
 	width:auto;
 	margin-left:0;
 	margin-right:0;
@@ -168,7 +202,7 @@ position:absolute;}
 }
 /* 图片大小调整 */
 img.block-image {
-    max-width: 200px;
+    /*max-width: 200px;*/
     min-width: auto;
 }
 
@@ -178,15 +212,16 @@ img.block-image {
 	body {
 	background-image:linear-gradient(to bottom,#f2f2f2,#ebebeb);
 	background-repeat:no-repeat;
+    background: #ebebeb;
 }
 .IndexPage h3.DiscussionListItem-title {
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
 }
-.App {
+/* .App { 否则不能固定标签栏
     overflow: hidden;
-}
+} */
 .DiscussionHero .TagsLabel .TagLabel {
     color: #4d698e;
     font-size: 16px!important;
@@ -323,8 +358,10 @@ kuoxo.com {
 .Post-body blockquote {
 	border:2px dotted #667c99;
 }
-.Post-body pre {
-	border:2px dotted #a7a7a7;
+.Post-body pre { /* 代码框 */
+	/* border:2px dotted #a7a7a7; */
+	background: #282c34;
+	color: #fff;
 }
 i.icon.fas.fa-check.Button-icon {
     color: @config-primary-color;
