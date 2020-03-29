@@ -356,12 +356,20 @@ kuoxo.com {
 	color:#828282;
 }
 .Post-body blockquote {
-	border:2px dotted #667c99;
+	border-radius: 0;
+	border: 0;
+	border-left-color: #42b983;
+	border-left-width: .5rem;
+	border-left-style: solid;
 }
-.Post-body pre { /* 代码框 */
-	/* border:2px dotted #a7a7a7; */
+.Post-body pre { /* 代码块 */
 	background: #282c34;
 	color: #fff;
+}
+.Post-body code { /* 短代码 */
+    color: #476582;
+    padding: .3rem .5rem;
+    background-color: rgba(27,31,35,.05);
 }
 i.icon.fas.fa-check.Button-icon {
     color: @config-primary-color;

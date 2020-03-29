@@ -1,29 +1,65 @@
-<style> .IndexPage .DiscussionListItem-info>.item-tags,.UserPage .DiscussionListItem-info>.item-tags{margin-right: 0; position: inherit; padding-right: 10px } .IndexPage .DiscussionListItem-info>.item-tags,.UserPage .DiscussionListItem-info>.item-tags { transition: none; -webkit-mask-image: none }</style>
+<style>
+	.IndexPage .DiscussionListItem-info>.item-tags,
+	.UserPage .DiscussionListItem-info>.item-tags {
+		margin-right: 0;
+		position: inherit;
+		padding-right: 10px
+	}
 
+	.IndexPage .DiscussionListItem-info>.item-tags,
+	.UserPage .DiscussionListItem-info>.item-tags {
+		transition: none;
+		-webkit-mask-image: none
+	}
+</style>
+
+<!-- 外链跳转 -->
 <script>
-document.addEventListener('click', event => {
-let t = event.target;
-if (t.matches('.Post-body a[target="_blank"]')) {
-let url = new URL(t.href);
-if (url.origin == document.location.origin) {
-t.removeAttribute('target');
-t.removeAttribute('rel');
-}
-}
-}, false);
+	document.addEventListener('click', event => {
+		let t = event.target;
+		if (t.matches('.Post-body a[target="_blank"]')) {
+			let url = new URL(t.href);
+			if (url.origin == document.location.origin) {
+				t.removeAttribute('target');
+				t.removeAttribute('rel');
+			}
+		}
+	}, false);
 </script>
 
-        <script>
-			(function(){
-			    var bp = document.createElement('script');
-			    var curProtocol = window.location.protocol.split(':')[0];
-			    if (curProtocol === 'https') {
-			        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-			    }
-			    else {
-			        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-			    }
-			    var s = document.getElementsByTagName("script")[0];
-			    s.parentNode.insertBefore(bp, s);
-			})();
-	   </script>
+<!-- 百度站长 -->
+<script>
+	(function() {
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		} else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+
+<footer align=center>
+	<!-- 加载时间 -->
+	<script>
+		var start_time = new Date();
+		var end_time = "";
+		var countTime = setInterval(function() {
+			if (document.readyState == "complete") {showLoadTime();}
+		}, 500)
+	
+		function showLoadTime() {
+			end_time = new Date();
+			loadtime_span.innerHTML = "Time Loaded " + (end_time.getTime() - start_time.getTime()) + " ms."
+			clearInterval(countTime);
+		}
+	</script>
+	<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script type="text/javascript">
+		document.write("<span align=center>Client IP "+returnCitySN["cip"]+".</span>")
+	</script>
+	<span id="loadtime_span"></span>
+</footer>
