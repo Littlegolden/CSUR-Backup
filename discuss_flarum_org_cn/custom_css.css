@@ -10,7 +10,6 @@ i.icon.fas.fa-lms:before {
     left: -4px;
 }
 
-
 /* 17年备份 */
 .qrcode {
 	position:fixed;
@@ -37,6 +36,7 @@ i.icon.fas.fa-lms:before {
 .upyun img {
 	vertical-align:middle;
 }
+
 /* 横幅 */
 .Hero-close {
     display: none;
@@ -66,20 +66,23 @@ i.icon.fas.fa-lms:before {
 /* 导航栏位置调整 */
 @media (max-width:1120px) and (min-width:768px) {
 	.App-header .container {
-	width:auto;
+		width:auto;
+	}
 }
-}@media (max-width:1051px) and (min-width:991px) {
+@media (max-width:1051px) and (min-width:991px) {
 	.Header-controls .Search:not(.focused) .Search-input {
-	max-width:166px;
-	-webkit-transition:all .4s;
-	-o-transition:all .4s;
-	transition:all .4s;
+		max-width:166px;
+		-webkit-transition:all .4s;
+		-o-transition:all .4s;
+		transition:all .4s;
+	}
 }
-}/* 标签页表单位移修复 */
+/* 标签页表单位移修复 */
 @media (min-width:768px) {
-	.TagDiscussionModal .Modal-content,.TagDiscussionModal .TagsInput {
+	.TagDiscussionModal .Modal-content,
+	.TagDiscussionModal .TagsInput {
 	    overflow:unset;
-        }
+    }
 }
 @media(max-width:767px){
     .TagsInput input{
@@ -95,9 +98,17 @@ li.item-littlegolden-post-license {
     margin-left: 10px;
     & .Form-group>label {display: none;}
 }
-
+/* 视频宽度 */
+body video {
+    max-width: -webkit-fill-available; /* Chrome 内核浏览器 */ 
+    max-width: -moz-available; /* 火狐内核浏览*/
+    display: inline-block;
+    vertical-align: baseline;
+    width: 100%;
+}
 /* 会员名录页,首页加载更多按钮尺寸 */
-.UserDirectoryList-loadMore .Button,.DiscussionList-loadMore .Button {
+.UserDirectoryList-loadMore .Button,
+.DiscussionList-loadMore .Button {
 	width:50%;
 	border-radius:30px;
 	margin-top:30px;
@@ -112,7 +123,8 @@ li.item-littlegolden-post-license {
         }
 }
 /* 替换点赞,回复按钮 */
-.item-like .Button--link .Button-label,.item-reply .Button--link .Button-label {
+.item-like .Button--link .Button-label,
+.item-reply .Button--link .Button-label {
 	display:none;
 }
 .item-like .Button:before {
@@ -148,7 +160,8 @@ li.item-littlegolden-post-license {
 	*/
     background:none;
 }
-.CommentPost.Post a.inline-image-link,.CommentPost.Post a.block-image-link {
+.CommentPost.Post a.inline-image-link,
+.CommentPost.Post a.block-image-link {
 	border-bottom:1px solid #e7edf3;
 	padding:0;
 	margin-left:0;
@@ -157,13 +170,15 @@ li.item-littlegolden-post-license {
 	background:none;
 	display:inline-block;
 }
-.CommentPost.Post a.inline-image-link:hover,.CommentPost.Post a.block-image-link:hover {
+.CommentPost.Post a.inline-image-link:hover,
+.CommentPost.Post a.block-image-link:hover {
 	border-color:#f36322;
 }
 .CommentPost.Post a.inline-image-link img {
 	top:0;
 }
-.CommentPost.Post a.inline-image-link .extlink-badge,.CommentPost.Post a.block-image-link .extlink-badge {
+.CommentPost.Post a.inline-image-link .extlink-badge,
+.CommentPost.Post a.block-image-link .extlink-badge {
 	display:none;
 }
 .CommentPost.Post a.block-image-link img {
@@ -178,7 +193,9 @@ li.item-littlegolden-post-license {
 .Post .Post-body table {
 	box-shadow:none;
 }
-.IndexPage .DiscussionListItem,.UserPage .DiscussionListItem,.DiscussionPage-discussion .DiscussionListItem {
+.IndexPage .DiscussionListItem,
+.UserPage .DiscussionListItem,
+.DiscussionPage-discussion .DiscussionListItem {
 	transition:all 0.1s;
 }
 
@@ -189,14 +206,15 @@ li.item-littlegolden-post-license {
 }
 /* 未读 */
 .unread .DiscussionListItem-title:after {
-font-family: "Font Awesome 5 Free";
-font-weight: 600;
-content: "\f111";
-color: #667c99;
-margin-left: 2px ;
-margin-top:-6px;
-transform: scale(0.5);
-position:absolute;}
+	font-family: "Font Awesome 5 Free";
+	font-weight: 600;
+	content: "\f111";
+	color: #667c99;
+	margin-left: 2px ;
+	margin-top:-6px;
+	transform: scale(0.5);
+	position:absolute;
+}
 .PostsUserPage .PostsUserPage-list .Post{
     padding-top:20px;
 }
