@@ -10,6 +10,17 @@ i.icon.fas.fa-lms:before {
     left: -4px;
 }
 
+/* 代码语言 */
+code[class*=language-] {position: relative;}code[class*=language-]:before {position: absolute;z-index: 3;right: 1em;font-size: .75rem;color: hsla(0, 0%, 100%, .4)}code[class~=language-js]:before {content: "js"}code[class~=language-ts]:before {content: "ts"}code[class~=language-html]:before {content: "html"}code[class~=language-md]:before {content: "md"}code[class~=language-vue]:before {content: "vue"}code[class~=language-css]:before {content: "css"}code[class~=language-sass]:before {content: "sass"}code[class~=language-scss]:before {content: "scss"}code[class~=language-less]:before {content: "less"}code[class~=language-stylus]:before {content: "stylus"}code[class~=language-go]:before {content: "go"}code[class~=language-java]:before {content: "java"}code[class~=language-c]:before {content: "c"}code[class~=language-sh]:before {content: "sh"}code[class~=language-bash]:before {content: "sh"}code[class~=language-yaml]:before {content: "yaml"}code[class~=language-py]:before {content: "py"}code[class~=language-docker]:before {content: "docker"}code[class~=language-dockerfile]:before {content: "dockerfile"}code[class~=language-makefile]:before {content: "makefile"}code[class~=language-javascript]:before {content: "js"}code[class~=language-typescript]:before {content: "ts"}code[class~=language-markup]:before {content: "html"}code[class~=language-markdown]:before {content: "md"}code[class~=language-json]:before {content: "json"}code[class~=language-ruby]:before {content: "rb"}code[class~=language-python]:before {content: "py"}code[class~=language-bash]:before {content: "sh"}code[class~=language-php]:before {content: "php"}
+
+/* 社区展 */
+.App-content .Pages-container{
+	width: 100%;
+	max-width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 /* 17年备份 */
 .qrcode {
 	position:fixed;
@@ -384,13 +395,16 @@ kuoxo.com {
 	background: #282c34;
 	color: #fff;
 }
-.Post-body code { /* 短代码 */
-    color: #476582;
+.Post-body code:not(.hljs) { /* 短代码 */
+    color: #506b90 !important;
     padding: .3rem .5rem;
-    background-color: rgba(27,31,35,.05);
+    background-color: rgba(27,31,35,0.05) !important;
 }
 i.icon.fas.fa-check.Button-icon {
     color: @config-primary-color;
+}
+.TagDiscussionModal-form i.icon.fas.fa-check.Button-icon {
+    color: #b8c3d2 !important;
 }
 .aaalert.aaerror .aainner {
 	border:2px dotted #b94a48!important;
