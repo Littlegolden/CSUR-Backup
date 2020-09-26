@@ -1,0 +1,27 @@
+body {
+	margin: 0;
+}
+
+.site-footer {
+	margin: 0;
+    margin-top: 64px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+	color: hsla(0,0%,100%,.9);
+	box-sizing: inherit;
+	text-align: center;
+	font-size: 1em;
+}
+
+.site-footer p {
+	margin: 0;
+}
+
+.rm-link-color > p > a {
+	text-decoration: none;
+	color: rgb(137, 137, 140);
+}
+
+.rm-link-color > p > a:hover {
+	text-decoration: underline;
+}

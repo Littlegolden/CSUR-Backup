@@ -399,11 +399,15 @@ kuoxo.com {
 	color:#828282;
 }
 .Post-body blockquote {
+	color: #2c3e50;
+	background-color: #f3f5f7;
 	border-radius: 0;
 	border: 0;
 	border-left-color: #42b983;
 	border-left-width: .5rem;
 	border-left-style: solid;
+	padding: 1rem 1.5rem;
+	margin: 1rem 0;
 }
 i.icon.fas.fa-check.Button-icon {
     color: @config-primary-color;
@@ -443,3 +447,6 @@ i.icon.fas.fa-check.Button-icon {
     margin-top: 10px;
     margin-bottom: 10px;
 }}
+
+/* 页脚 */
+.site-footer{margin:0;margin-top:64px;padding-top:30px;padding-bottom:30px;color:hsla(0,0%,100%,.9);box-sizing:inherit;text-align:center;font-size:1em}.site-footer p{margin:0}.rm-link-color>p>a{text-decoration:none;color:#89898c}.rm-link-color>p>a:hover{text-decoration:underline}
