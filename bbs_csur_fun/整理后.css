@@ -41,23 +41,6 @@
 			}
 		}
 
-		/* 信息流右侧展示谷歌侧边栏广告 */
-		li.item-flagrow-ad .sideads {
-			position: absolute;
-			left: 1120px;
-			top: 0;
-			width: 190px;
-		}
-			/* 根据屏幕宽度调整位置 */
-		@media (max-width:1570px) and (min-width:1000px) {
-			.IndexPage .container {
-				margin-right: 20%;
-			}
-			.Hero .container, .UserDirectoryList .container { /* 让 Hearo banner 不受此影响 */
-				margin-right: auto;
-			}
-		}
-
 		/* 搜索结果关键字背景色 */
 		.DiscussionListItem-main mark {
 			background: #ffff80 !important;
@@ -126,8 +109,12 @@
 		}
 		
 		/* 视频宽度跟随帖子宽度 */
-		video {
-			max-width: -webkit-fill-available;
+		body video {
+			max-width: -webkit-fill-available; /* Chrome 内核浏览器 */ 
+			max-width: -moz-available; /* 火狐内核浏览*/
+			display: inline-block;
+			vertical-align: baseline;
+			width: 100%;
 		}
 		
 		/* BBBBCode 弹窗宽度 */
@@ -350,7 +337,7 @@
 				top: 0 !important;
 				left: 35px;
 		
-				>.Button {
+				> .Button {
 					height: 46px;
 					padding: 13px !important;
 				}
@@ -926,11 +913,7 @@
 .DiscussionPage-discussion .DiscussionListItem{ 
     transition: all 0.1s; /* 动画时间 */
 }
-@media (min-width: 991px){
-    .IndexPage .DiscussionList-discussions>li:not(:first-child) .DiscussionListItem:hover{ /* 悬浮效果 */
-        transform: scale(1.01); /* 缩放 */
-    }
-}
+
 
 @media (min-width: 768px){ /* pc 端 */
 .IndexPage .DiscussionListItem-content,
@@ -966,8 +949,8 @@
 @media (min-width: 768px){
 .IndexPage .DiscussionListItem:hover {
 background-color: #fff;
--webkit-box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;
-box-shadow: 0px 8px 24px 3px rgba(84,102,134,0.1) !important;
+-webkit-box-shadow: 0 1px 15px 0 rgba(0,0,0,.18)!important;
+box-shadow: 0 1px 15px 0 rgba(0,0,0,.18)!important;
 }}
 /* banner */
 .WelcomeHero{color: #282828;}
